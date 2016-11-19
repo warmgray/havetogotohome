@@ -8,12 +8,16 @@
 
 /* Begin PBXBuildFile section */
 		4C8FCFAE1DE018F600B5C75B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C8FCFAD1DE018F600B5C75B /* AppDelegate.swift */; };
-		4C8FCFB01DE018F600B5C75B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C8FCFAF1DE018F600B5C75B /* ViewController.swift */; };
+		4C8FCFB01DE018F600B5C75B /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C8FCFAF1DE018F600B5C75B /* MainViewController.swift */; };
 		4C8FCFB31DE018F600B5C75B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4C8FCFB11DE018F600B5C75B /* Main.storyboard */; };
 		4C8FCFB61DE018F600B5C75B /* Have_to_go_home.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 4C8FCFB41DE018F600B5C75B /* Have_to_go_home.xcdatamodeld */; };
 		4C8FCFB81DE018F600B5C75B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4C8FCFB71DE018F600B5C75B /* Assets.xcassets */; };
 		4C8FCFBB1DE018F600B5C75B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4C8FCFB91DE018F600B5C75B /* LaunchScreen.storyboard */; };
 		4C8FCFC61DE018F600B5C75B /* Have_to_go_homeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C8FCFC51DE018F600B5C75B /* Have_to_go_homeTests.swift */; };
+		4C8FCFDE1DE029D500B5C75B /* bg_image in Resources */ = {isa = PBXBuildFile; fileRef = 4C8FCFDD1DE029D500B5C75B /* bg_image */; };
+		4C8FCFE01DE029EE00B5C75B /* icon_image in Resources */ = {isa = PBXBuildFile; fileRef = 4C8FCFDF1DE029EE00B5C75B /* icon_image */; };
+		4C8FCFE41DE02EF300B5C75B /* SetHomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C8FCFE31DE02EF300B5C75B /* SetHomeViewController.swift */; };
+		4C8FCFE61DE0343600B5C75B /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4C8FCFE51DE0343600B5C75B /* Images.xcassets */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -29,7 +33,7 @@
 /* Begin PBXFileReference section */
 		4C8FCFAA1DE018F600B5C75B /* Have_to_go_home.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Have_to_go_home.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4C8FCFAD1DE018F600B5C75B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		4C8FCFAF1DE018F600B5C75B /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		4C8FCFAF1DE018F600B5C75B /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		4C8FCFB21DE018F600B5C75B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		4C8FCFB51DE018F600B5C75B /* Have_to_go_home.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Have_to_go_home.xcdatamodel; sourceTree = "<group>"; };
 		4C8FCFB71DE018F600B5C75B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -38,6 +42,10 @@
 		4C8FCFC11DE018F600B5C75B /* Have_to_go_homeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Have_to_go_homeTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		4C8FCFC51DE018F600B5C75B /* Have_to_go_homeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Have_to_go_homeTests.swift; sourceTree = "<group>"; };
 		4C8FCFC71DE018F600B5C75B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4C8FCFDD1DE029D500B5C75B /* bg_image */ = {isa = PBXFileReference; lastKnownFileType = folder; path = bg_image; sourceTree = "<group>"; };
+		4C8FCFDF1DE029EE00B5C75B /* icon_image */ = {isa = PBXFileReference; lastKnownFileType = folder; path = icon_image; sourceTree = "<group>"; };
+		4C8FCFE31DE02EF300B5C75B /* SetHomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SetHomeViewController.swift; sourceTree = "<group>"; };
+		4C8FCFE51DE0343600B5C75B /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,6 +87,8 @@
 		4C8FCFAC1DE018F600B5C75B /* Have_to_go_home */ = {
 			isa = PBXGroup;
 			children = (
+				4C8FCFDD1DE029D500B5C75B /* bg_image */,
+				4C8FCFDF1DE029EE00B5C75B /* icon_image */,
 				4C8FCFD51DE01C0100B5C75B /* ServiceImpl */,
 				4C8FCFD41DE01BFB00B5C75B /* Service */,
 				4C8FCFD31DE01BF400B5C75B /* Model */,
@@ -89,6 +99,7 @@
 				4C8FCFB91DE018F600B5C75B /* LaunchScreen.storyboard */,
 				4C8FCFBC1DE018F600B5C75B /* Info.plist */,
 				4C8FCFB41DE018F600B5C75B /* Have_to_go_home.xcdatamodeld */,
+				4C8FCFE51DE0343600B5C75B /* Images.xcassets */,
 			);
 			path = Have_to_go_home;
 			sourceTree = "<group>";
@@ -105,7 +116,8 @@
 		4C8FCFD11DE01BE400B5C75B /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				4C8FCFAF1DE018F600B5C75B /* ViewController.swift */,
+				4C8FCFAF1DE018F600B5C75B /* MainViewController.swift */,
+				4C8FCFE31DE02EF300B5C75B /* SetHomeViewController.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -181,6 +193,7 @@
 				TargetAttributes = {
 					4C8FCFA91DE018F600B5C75B = {
 						CreatedOnToolsVersion = 8.1;
+						DevelopmentTeam = 2U8WP57VU8;
 						ProvisioningStyle = Automatic;
 					};
 					4C8FCFC01DE018F600B5C75B = {
@@ -215,6 +228,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				4C8FCFBB1DE018F600B5C75B /* LaunchScreen.storyboard in Resources */,
+				4C8FCFDE1DE029D500B5C75B /* bg_image in Resources */,
+				4C8FCFE61DE0343600B5C75B /* Images.xcassets in Resources */,
+				4C8FCFE01DE029EE00B5C75B /* icon_image in Resources */,
 				4C8FCFB81DE018F600B5C75B /* Assets.xcassets in Resources */,
 				4C8FCFB31DE018F600B5C75B /* Main.storyboard in Resources */,
 			);
@@ -234,8 +250,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4C8FCFB01DE018F600B5C75B /* ViewController.swift in Sources */,
+				4C8FCFB01DE018F600B5C75B /* MainViewController.swift in Sources */,
 				4C8FCFAE1DE018F600B5C75B /* AppDelegate.swift in Sources */,
+				4C8FCFE41DE02EF300B5C75B /* SetHomeViewController.swift in Sources */,
 				4C8FCFB61DE018F600B5C75B /* Have_to_go_home.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -373,7 +390,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				DEVELOPMENT_TEAM = 2U8WP57VU8;
 				INFOPLIST_FILE = Have_to_go_home/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "org.jwYoo.Have-to-go-home";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -385,7 +405,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				DEVELOPMENT_TEAM = 2U8WP57VU8;
 				INFOPLIST_FILE = Have_to_go_home/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "org.jwYoo.Have-to-go-home";
 				PRODUCT_NAME = "$(TARGET_NAME)";
