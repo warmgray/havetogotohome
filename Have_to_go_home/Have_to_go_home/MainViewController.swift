@@ -21,7 +21,7 @@ class MainViewController: UIViewController {
     func movetToNextPage() {
         if(firstAccess==true) {
             print("moveTo Method Start")
-            self.performSegue(withIdentifier: "goToFirstSetting", sender: self)
+            let settingStoryBoard : UIStoryboard = UIStoryboard(name: <#T##String#>, bundle: <#T##Bundle?#>)
             
         } else {
             //본 페이지로

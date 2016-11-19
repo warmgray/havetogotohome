@@ -24,7 +24,7 @@
         <!--Setting View Controller-->
         <scene sceneID="b1L-fN-tA7">
             <objects>
-                <viewController id="upL-K2-Vfg" customClass="SettingViewController" customModule="Have_to_go_home" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="SettingView" id="upL-K2-Vfg" customClass="SettingViewController" customModule="Have_to_go_home" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Q3L-Zb-fGm"/>
                         <viewControllerLayoutGuide type="bottom" id="rke-hT-6X9"/>
