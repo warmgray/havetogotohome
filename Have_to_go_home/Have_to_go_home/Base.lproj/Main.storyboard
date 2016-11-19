@@ -9,10 +9,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Main View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Have_to_go_home" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="MainViewController" customModule="Have_to_go_home" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -20,17 +20,26 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Randing 640'" translatesAutoresizingMaskIntoConstraints="NO" id="6Rh-J3-Hl8">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </view>
+                    <connections>
+                        <segue destination="upL-K2-Vfg" kind="push" identifier="goToFirstSetting" animates="NO" id="mRJ-4L-1fL"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="116" y="123.68815592203899"/>
         </scene>
-        <!--View Controller-->
+        <!--Setting View Controller-->
         <scene sceneID="b1L-fN-tA7">
             <objects>
-                <viewController id="upL-K2-Vfg" sceneMemberID="viewController">
+                <viewController id="upL-K2-Vfg" customClass="SettingViewController" customModule="Have_to_go_home" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Q3L-Zb-fGm"/>
                         <viewControllerLayoutGuide type="bottom" id="rke-hT-6X9"/>
@@ -38,12 +47,35 @@
                     <view key="view" contentMode="scaleToFill" id="Thx-57-7xO">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Background 640'" translatesAutoresizingMaskIntoConstraints="NO" id="P2v-ga-Yhf">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nvP-Df-xQ8">
+                                <rect key="frame" x="103.5" y="446" width="168.5" height="43"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="13.300000190734863"/>
+                                <state key="normal" title="시작하기"/>
+                                <connections>
+                                    <action selector="SaveAndStartButton:" destination="upL-K2-Vfg" eventType="touchUpInside" id="9KA-y7-flc"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
+                    <navigationItem key="navigationItem" id="7LE-FI-5pv"/>
+                    <connections>
+                        <outlet property="saveAndStartButton" destination="nvP-Df-xQ8" id="ZOE-HU-484"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hWc-Cg-4Zg" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1052" y="124"/>
+            <point key="canvasLocation" x="1052" y="123.68815592203899"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="Background 640'" width="640" height="960"/>
+        <image name="Randing 640'" width="640" height="960"/>
+    </resources>
 </document>

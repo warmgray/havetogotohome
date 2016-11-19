@@ -8,11 +8,16 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class MainViewController: UIViewController {
 
     override func viewDidLoad() {
         sleep(2)
         super.viewDidLoad()
+        _ = Timer.init(timeInterval: 1.0, target: self, selector: #selector(movetToNextPage), userInfo: nil, repeats: false)
+    }
+    
+    func movetToNextPage() {
+        self.performSegue(withIdentifier: "goToFirstSetting", sender: self)
     }
 
     
