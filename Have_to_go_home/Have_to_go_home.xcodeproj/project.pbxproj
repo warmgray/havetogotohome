@@ -81,7 +81,7 @@
 			children = (
 				4C8FCFD51DE01C0100B5C75B /* ServiceImpl */,
 				4C8FCFD41DE01BFB00B5C75B /* Service */,
-				4C8FCFD31DE01BF400B5C75B /* Domain */,
+				4C8FCFD31DE01BF400B5C75B /* Model */,
 				4C8FCFD11DE01BE400B5C75B /* Controller */,
 				4C8FCFAD1DE018F600B5C75B /* AppDelegate.swift */,
 				4C8FCFB11DE018F600B5C75B /* Main.storyboard */,
@@ -110,11 +110,11 @@
 			name = Controller;
 			sourceTree = "<group>";
 		};
-		4C8FCFD31DE01BF400B5C75B /* Domain */ = {
+		4C8FCFD31DE01BF400B5C75B /* Model */ = {
 			isa = PBXGroup;
 			children = (
 			);
-			name = Domain;
+			name = Model;
 			sourceTree = "<group>";
 		};
 		4C8FCFD41DE01BFB00B5C75B /* Service */ = {
