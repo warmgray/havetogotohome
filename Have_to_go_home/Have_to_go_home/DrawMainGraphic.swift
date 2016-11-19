@@ -20,5 +20,7 @@ class DrawMainGraphic: UIView {
         context?.addEllipse(in: basicCircle)
         context?.strokePath()
     }
+    
+    
 
 }

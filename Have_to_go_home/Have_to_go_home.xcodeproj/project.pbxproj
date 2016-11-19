@@ -19,6 +19,9 @@
 		4CF710321DE08F0500520864 /* LimitTimeSettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CF710311DE08F0500520864 /* LimitTimeSettingViewController.swift */; };
 		4CF710341DE09F0600520864 /* DrawMainGraphic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CF710331DE09F0600520864 /* DrawMainGraphic.swift */; };
 		4CF710361DE0C6DC00520864 /* MapPathViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CF710351DE0C6DC00520864 /* MapPathViewController.swift */; };
+		4CF710391DE0CB3D00520864 /* goHomeAlarm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CF710371DE0CB3D00520864 /* goHomeAlarm.swift */; };
+		4CF7103A1DE0CB3D00520864 /* loadToHomeParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CF710381DE0CB3D00520864 /* loadToHomeParser.swift */; };
+		4CF7103D1DE0D51200520864 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4CF7103C1DE0D51200520864 /* CoreLocation.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,6 +51,9 @@
 		4CF710311DE08F0500520864 /* LimitTimeSettingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LimitTimeSettingViewController.swift; sourceTree = "<group>"; };
 		4CF710331DE09F0600520864 /* DrawMainGraphic.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DrawMainGraphic.swift; sourceTree = "<group>"; };
 		4CF710351DE0C6DC00520864 /* MapPathViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapPathViewController.swift; sourceTree = "<group>"; };
+		4CF710371DE0CB3D00520864 /* goHomeAlarm.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = goHomeAlarm.swift; sourceTree = "<group>"; };
+		4CF710381DE0CB3D00520864 /* loadToHomeParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = loadToHomeParser.swift; sourceTree = "<group>"; };
+		4CF7103C1DE0D51200520864 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -55,6 +61,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4CF7103D1DE0D51200520864 /* CoreLocation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -74,6 +81,7 @@
 				4C8FCFAC1DE018F600B5C75B /* Have_to_go_home */,
 				4C8FCFC41DE018F600B5C75B /* Have_to_go_homeTests */,
 				4C8FCFAB1DE018F600B5C75B /* Products */,
+				4CF7103B1DE0D51200520864 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -127,6 +135,8 @@
 		4C8FCFD31DE01BF400B5C75B /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				4CF710371DE0CB3D00520864 /* goHomeAlarm.swift */,
+				4CF710381DE0CB3D00520864 /* loadToHomeParser.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -144,6 +154,14 @@
 			children = (
 			);
 			name = ServiceImpl;
+			sourceTree = "<group>";
+		};
+		4CF7103B1DE0D51200520864 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				4CF7103C1DE0D51200520864 /* CoreLocation.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -250,12 +268,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4CF7103A1DE0CB3D00520864 /* loadToHomeParser.swift in Sources */,
 				4CF710361DE0C6DC00520864 /* MapPathViewController.swift in Sources */,
 				4CF710341DE09F0600520864 /* DrawMainGraphic.swift in Sources */,
 				4CF710321DE08F0500520864 /* LimitTimeSettingViewController.swift in Sources */,
 				4C8FCFB01DE018F600B5C75B /* MainViewController.swift in Sources */,
 				4C8FCFAE1DE018F600B5C75B /* AppDelegate.swift in Sources */,
 				4C8FCFE41DE02EF300B5C75B /* SettingViewController.swift in Sources */,
+				4CF710391DE0CB3D00520864 /* goHomeAlarm.swift in Sources */,
 				4CF710301DE08EEA00520864 /* MapViewController.swift in Sources */,
 				4C8FCFB61DE018F600B5C75B /* Have_to_go_home.xcdatamodeld in Sources */,
 			);

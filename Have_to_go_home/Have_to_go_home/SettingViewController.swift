@@ -7,8 +7,9 @@
 //
 
 import UIKit
+import CoreLocation
 
-class SettingViewController: UIViewController {
+class SettingViewController: UIViewController, CLLocationManagerDelegate {
 
     @IBOutlet var saveAndStartButton: UIButton!
     @IBOutlet weak var placeToGo: UILabel!
@@ -16,6 +17,8 @@ class SettingViewController: UIViewController {
     
     var isFirst : Bool = true
     
+    var locationManager : CLLocationManager = CLLocationManager()
+    var startLocation : CLLocation!
     
     @IBAction func setHomeSegue(_ sender: Any) {
         self.performSegue(withIdentifier: "setHomeSegue", sender: nil)
@@ -29,6 +32,11 @@ class SettingViewController: UIViewController {
         let clickButton = saveAndStartButton.layer
         clickButton.backgroundColor = UIColor.white.cgColor
         saveAndStartButton.setTitleColor(UIColor.black, for: UIControlState.normal)
+        
+        let nsuser = UserDefaults()
+        nsuser.register(defaults: ["isFirst": false])
+        nsuser.synchronize()
+
         self.performSegue(withIdentifier: "firstGoToMainSegue", sender: nil)
     }
     
@@ -68,6 +76,16 @@ class SettingViewController: UIViewController {
         super.viewDidLoad()
         self.loadSaveAndStartButton()
         self.loadInputLabels()
+        // alarm permission 맨 처음에 해야 될 것들임.
+        let app = UIApplication.shared
+        let notificationSettings = UIUserNotificationSettings()
+        app.registerUserNotificationSettings(notificationSettings)
+        locationManager.desiredAccuracy = kCLLocationAccuracyBest
+        locationManager.delegate = self
+        locationManager.requestWhenInUseAuthorization()
+        locationManager.startUpdatingLocation()
+        locationManager.distanceFilter = 1000.0
+        startLocation = nil
         
     }
     
@@ -75,6 +93,22 @@ class SettingViewController: UIViewController {
         if(!isFirst) {
             self.performSegue(withIdentifier: "firstGoToMainSegue", sender: nil)
         }
+    }
+    
+    func locationManager(manager: CLLocationManager,
+                         didUpdateLocations locations: [CLLocation])
+    {
+        let latestLocation: AnyObject = locations[locations.count - 1 ]
+        var latitude = String(format: "%.4f", startLocation.coordinate.latitude)
+        var longtitude = String(format: "%.4f", startLocation.coordinate.longitude)
+        
+        locationManager.desiredAccuracy = kCLLocationAccuracyBest
+        locationManager.delegate = self
+        locationManager.requestWhenInUseAuthorization()
+        locationManager.startUpdatingLocation()
+        locationManager.distanceFilter = 1000.0
+        startLocation = nil
+        
     }
 
     

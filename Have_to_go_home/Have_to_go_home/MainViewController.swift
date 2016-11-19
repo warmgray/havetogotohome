@@ -23,8 +23,9 @@ class MainViewController: UIViewController {
     @IBOutlet weak var transportationArrivalTime: UILabel!
     
     @IBOutlet weak var bottomButtonMessage: UIButton!
+    @IBOutlet weak var baseDotCircle: UIImageView!
     
-    
+    var circleCenter:CGPoint!
     
     override func viewDidLoad() {
         super.viewDidLoad()

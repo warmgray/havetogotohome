@@ -377,6 +377,7 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="baseDotCircle" destination="MOF-Cq-O8H" id="EuW-7j-5Oo"/>
                         <outlet property="bottomButtonMessage" destination="hZW-Uc-bos" id="i4N-HV-A9y"/>
                         <outlet property="mainMessage" destination="Ka6-MT-kwA" id="lhn-a3-bEG"/>
                         <outlet property="missionHeader" destination="ayw-Px-2a2" id="K0H-BL-mAW"/>

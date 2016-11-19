@@ -17,7 +17,7 @@ class loadToHomeParser{
     }
     func getDataList(){
         do {
-            datalist = try NSJSONSerialization.JSONObjectWithData(NSData(contentsOfURL: baseURL!)!, options: NSJSONReadingOptions.MutableContainers) as! NSDictionary
+            datalist = try JSONSerialization.jsonObject(with: NSData(contentsOf: baseURL! as URL)! as Data, options: JSONSerialization.ReadingOptions.mutableContainers) as! NSDictionary
         } catch {
             print("Error loading Data")
         }
@@ -25,12 +25,13 @@ class loadToHomeParser{
         sessionSave()
     }
     func sessionSave(){
-        let dateFormatter = NSDateFormatter()
+        let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
-        var initTime = dateFormatter.dateFromString(datalist["first_start_time"] as! String)
+        var initTime = dateFormatter.date(from: datalist["first_start_time"] as! String)
         
-        let nsuser = NSUserDefaults()
-        nsuser.registerDefaults(["first_start_time": (initTime?.description)!])
+        //세션 값 저장
+        let nsuser = UserDefaults()
+        nsuser.register(defaults: ["first_start_time": (initTime?.description)!])
         nsuser.synchronize()
     }
 }
