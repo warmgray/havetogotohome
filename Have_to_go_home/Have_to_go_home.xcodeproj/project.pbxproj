@@ -17,6 +17,7 @@
 		4C8FCFE41DE02EF300B5C75B /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C8FCFE31DE02EF300B5C75B /* SettingViewController.swift */; };
 		4CF710301DE08EEA00520864 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CF7102F1DE08EEA00520864 /* MapViewController.swift */; };
 		4CF710321DE08F0500520864 /* LimitTimeSettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CF710311DE08F0500520864 /* LimitTimeSettingViewController.swift */; };
+		4CF710341DE09F0600520864 /* DrawMainGraphic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CF710331DE09F0600520864 /* DrawMainGraphic.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,6 +45,7 @@
 		4C8FCFE31DE02EF300B5C75B /* SettingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingViewController.swift; sourceTree = "<group>"; };
 		4CF7102F1DE08EEA00520864 /* MapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		4CF710311DE08F0500520864 /* LimitTimeSettingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LimitTimeSettingViewController.swift; sourceTree = "<group>"; };
+		4CF710331DE09F0600520864 /* DrawMainGraphic.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DrawMainGraphic.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -129,6 +131,7 @@
 		4C8FCFD41DE01BFB00B5C75B /* Service */ = {
 			isa = PBXGroup;
 			children = (
+				4CF710331DE09F0600520864 /* DrawMainGraphic.swift */,
 			);
 			name = Service;
 			sourceTree = "<group>";
@@ -244,6 +247,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4CF710341DE09F0600520864 /* DrawMainGraphic.swift in Sources */,
 				4CF710321DE08F0500520864 /* LimitTimeSettingViewController.swift in Sources */,
 				4C8FCFB01DE018F600B5C75B /* MainViewController.swift in Sources */,
 				4C8FCFAE1DE018F600B5C75B /* AppDelegate.swift in Sources */,

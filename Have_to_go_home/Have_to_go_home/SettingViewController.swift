@@ -14,13 +14,24 @@ class SettingViewController: UIViewController {
     @IBOutlet weak var placeToGo: UILabel!
     @IBOutlet weak var timeToGo: UILabel!
     
-    @IBAction func mapTrigger(_ sender: Any) {
-        print("map button")
+    var isFirst : Bool = true
+    
+    
+    @IBAction func setHomeSegue(_ sender: Any) {
+        self.performSegue(withIdentifier: "setHomeSegue", sender: nil)
     }
     
-    @IBAction func timeTrigger(_ sender: Any) {
-        print("time button")
+    @IBAction func setLimitTimeSegue(_ sender: Any) {
+        self.performSegue(withIdentifier: "setLimitTimeSegue", sender: nil)
     }
+
+    @IBAction func startButtonClick(_ sender: Any) {
+        let clickButton = saveAndStartButton.layer
+        clickButton.backgroundColor = UIColor.white.cgColor
+        saveAndStartButton.setTitleColor(UIColor.black, for: UIControlState.normal)
+        self.performSegue(withIdentifier: "firstGoToMainSegue", sender: nil)
+    }
+    
     
     
     func loadSaveAndStartButton() {
@@ -28,7 +39,7 @@ class SettingViewController: UIViewController {
         buttonLayer.borderWidth = 1.0
         buttonLayer.cornerRadius = 21.5
         buttonLayer.masksToBounds = true
-        buttonLayer.borderColor = UIColor(red: 225, green: 225, blue: 225, alpha: 1).cgColor
+        buttonLayer.borderColor = UIColor(red: 1, green: 1, blue: 1, alpha: 1).cgColor
     }
     
     func loadInputLabels() {
@@ -50,13 +61,20 @@ class SettingViewController: UIViewController {
         placeToGo.layer.addSublayer(placeBorder)
         placeToGo.layer.masksToBounds = true
         
-        
     }
     
     override func viewDidLoad() {
+        
         super.viewDidLoad()
         self.loadSaveAndStartButton()
         self.loadInputLabels()
+        
+    }
+    
+    func isFirstUser () {
+        if(!isFirst) {
+            self.performSegue(withIdentifier: "firstGoToMainSegue", sender: nil)
+        }
     }
 
     

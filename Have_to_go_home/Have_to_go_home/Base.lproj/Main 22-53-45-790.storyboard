@@ -1,0 +1,246 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="upL-K2-Vfg">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11524"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Main View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="MainViewController" customModule="Have_to_go_home" customModuleProvider="target" sceneMemberID="viewController">
+                    <connections>
+                        <segue destination="upL-K2-Vfg" kind="show" identifier="goToFirstSetting" id="0sH-JZ-qqt"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="116" y="123.68815592203899"/>
+        </scene>
+        <!--Setting View Controller-->
+        <scene sceneID="b1L-fN-tA7">
+            <objects>
+                <viewController storyboardIdentifier="SettingView" id="upL-K2-Vfg" customClass="SettingViewController" customModule="Have_to_go_home" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Q3L-Zb-fGm"/>
+                        <viewControllerLayoutGuide type="bottom" id="rke-hT-6X9"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Thx-57-7xO">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Background 640'" translatesAutoresizingMaskIntoConstraints="NO" id="P2v-ga-Yhf">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nvP-Df-xQ8">
+                                <rect key="frame" x="108" y="484" width="160" height="43"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="43" id="an0-Hb-ywd"/>
+                                    <constraint firstAttribute="width" constant="160" id="vRE-sF-l6a"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="13.300000190734863"/>
+                                <state key="normal" title="시작하기"/>
+                                <connections>
+                                    <action selector="SaveAndStartButton:" destination="upL-K2-Vfg" eventType="touchUpInside" id="9KA-y7-flc"/>
+                                </connections>
+                            </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="setting_menu" translatesAutoresizingMaskIntoConstraints="NO" id="dep-5V-bcB">
+                                <rect key="frame" x="15" y="36" width="20" height="14"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="20" id="0UQ-dg-fbv"/>
+                                    <constraint firstAttribute="height" constant="14" id="zEC-9b-J3e"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="기본 설정" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="p2n-cY-SfG">
+                                <rect key="frame" x="150" y="33" width="75" height="20"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="20" id="UW1-4I-KYr"/>
+                                    <constraint firstAttribute="width" constant="75" id="get-0M-10I"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="12"/>
+                                <color key="textColor" red="0.99519230769230771" green="0.99038461538461542" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" distribution="equalSpacing" translatesAutoresizingMaskIntoConstraints="NO" id="81j-nj-diV" userLabel="selectTime">
+                                <rect key="frame" x="72" y="323" width="200" height="22"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="alarm-clock" translatesAutoresizingMaskIntoConstraints="NO" id="UkO-tC-uym">
+                                        <rect key="frame" x="0.0" y="0.0" width="22" height="22"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="21.5" id="5Gg-sz-Eli"/>
+                                            <constraint firstAttribute="height" constant="21.5" id="aUn-VZ-Jwy"/>
+                                        </constraints>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="통금시간을 설정하세요" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PNV-GF-Pw8">
+                                        <rect key="frame" x="50" y="0.0" width="150" height="22"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="21.5" id="i1x-6l-Bmu"/>
+                                            <constraint firstAttribute="width" constant="150" id="itN-4w-QZJ"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="AppleSDGothicNeo-Light" family="Apple SD Gothic Neo" pointSize="12"/>
+                                        <color key="textColor" red="0.96866074784602696" green="1" blue="0.9497905841482871" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="200" id="81G-Lb-fPN"/>
+                                    <constraint firstAttribute="height" constant="21.5" id="GUc-sb-dIa"/>
+                                </constraints>
+                            </stackView>
+                            <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" distribution="equalSpacing" translatesAutoresizingMaskIntoConstraints="NO" id="dFf-ae-hUT" userLabel="selectPlace">
+                                <rect key="frame" x="73" y="243" width="200" height="22"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="placeholder-3" translatesAutoresizingMaskIntoConstraints="NO" id="Vg6-Ts-ndc">
+                                        <rect key="frame" x="0.0" y="0.0" width="21" height="22"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="21.5" id="DVm-OS-QaH"/>
+                                            <constraint firstAttribute="width" constant="21.5" id="jk8-vo-EYi"/>
+                                        </constraints>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="돌아가야할 장소를 입력하세요" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dEw-6B-7Tl">
+                                        <rect key="frame" x="50" y="0.0" width="150" height="22"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="21.5" id="OFk-br-RSf"/>
+                                            <constraint firstAttribute="width" constant="150" id="QYx-hv-bH6"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="AppleSDGothicNeo-Light" family="Apple SD Gothic Neo" pointSize="12"/>
+                                        <color key="textColor" red="0.97917803906443224" green="1" blue="0.98008330573559399" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21.5" id="R1r-IS-4PI"/>
+                                    <constraint firstAttribute="width" constant="200" id="f1I-m1-sgf"/>
+                                </constraints>
+                            </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ocq-1e-z9e" userLabel="timeButton">
+                                <rect key="frame" x="112" y="329" width="150" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="Iwm-Wa-8Ec"/>
+                                    <constraint firstAttribute="width" constant="150" id="ZYG-T4-qTs"/>
+                                </constraints>
+                                <connections>
+                                    <action selector="MapTrigger:" destination="upL-K2-Vfg" eventType="touchUpInside" id="x7q-b4-3dh"/>
+                                    <action selector="timeTrigger:" destination="upL-K2-Vfg" eventType="touchUpInside" id="TbG-dk-jtw"/>
+                                    <segue destination="94T-4H-Duk" kind="show" id="G0X-y2-6MG"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="P25-uO-eLE" userLabel="placeButton">
+                                <rect key="frame" x="108" y="209" width="150" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="150" id="19K-BJ-Nui"/>
+                                    <constraint firstAttribute="height" constant="30" id="1gl-cV-GCV"/>
+                                </constraints>
+                                <connections>
+                                    <action selector="MapTrigger:" destination="upL-K2-Vfg" eventType="touchUpInside" id="0HT-eq-eGn"/>
+                                    <action selector="mapTrigger:" destination="upL-K2-Vfg" eventType="touchUpInside" id="CLc-DU-elH"/>
+                                    <segue destination="RPB-HV-azb" kind="show" id="Dbz-Ga-IRH"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="dFf-ae-hUT" firstAttribute="centerX" secondItem="Thx-57-7xO" secondAttribute="centerX" id="6dr-XV-xzg"/>
+                            <constraint firstItem="dep-5V-bcB" firstAttribute="leading" secondItem="Thx-57-7xO" secondAttribute="leading" constant="15" id="E7f-Ld-9Py"/>
+                            <constraint firstItem="p2n-cY-SfG" firstAttribute="centerX" secondItem="Thx-57-7xO" secondAttribute="centerX" id="EeP-VG-wdy"/>
+                            <constraint firstItem="nvP-Df-xQ8" firstAttribute="top" secondItem="81j-nj-diV" secondAttribute="bottom" constant="97" id="Gsm-qb-WMI"/>
+                            <constraint firstItem="P2v-ga-Yhf" firstAttribute="top" secondItem="Thx-57-7xO" secondAttribute="top" id="K2X-hx-kE9"/>
+                            <constraint firstItem="P25-uO-eLE" firstAttribute="centerX" secondItem="Thx-57-7xO" secondAttribute="centerX" id="Uhm-85-JJi"/>
+                            <constraint firstItem="P2v-ga-Yhf" firstAttribute="leading" secondItem="Thx-57-7xO" secondAttribute="leading" id="nx4-bc-3oV"/>
+                            <constraint firstItem="dep-5V-bcB" firstAttribute="top" secondItem="Q3L-Zb-fGm" secondAttribute="bottom" constant="16" id="oBx-aE-Dx5"/>
+                            <constraint firstItem="Ocq-1e-z9e" firstAttribute="centerX" secondItem="Thx-57-7xO" secondAttribute="centerX" id="one-ia-eve"/>
+                            <constraint firstItem="nvP-Df-xQ8" firstAttribute="centerX" secondItem="Thx-57-7xO" secondAttribute="centerX" id="rG2-Hn-N95"/>
+                            <constraint firstItem="nvP-Df-xQ8" firstAttribute="top" secondItem="dFf-ae-hUT" secondAttribute="bottom" constant="177" id="shi-vf-boL"/>
+                            <constraint firstItem="nvP-Df-xQ8" firstAttribute="top" secondItem="Ocq-1e-z9e" secondAttribute="bottom" constant="97" id="tHt-Zi-PZn"/>
+                            <constraint firstItem="rke-hT-6X9" firstAttribute="top" secondItem="nvP-Df-xQ8" secondAttribute="bottom" constant="140" id="uv8-Sv-KqX"/>
+                            <constraint firstAttribute="trailing" secondItem="P2v-ga-Yhf" secondAttribute="trailing" id="w4b-32-Jnz"/>
+                            <constraint firstItem="dFf-ae-hUT" firstAttribute="centerY" secondItem="P25-uO-eLE" secondAttribute="centerY" id="xFm-iB-zVn"/>
+                            <constraint firstItem="81j-nj-diV" firstAttribute="centerX" secondItem="Thx-57-7xO" secondAttribute="centerX" id="xmS-fR-BrH"/>
+                            <constraint firstItem="p2n-cY-SfG" firstAttribute="top" secondItem="Q3L-Zb-fGm" secondAttribute="bottom" constant="13" id="xml-Jh-MKu"/>
+                            <constraint firstItem="rke-hT-6X9" firstAttribute="top" secondItem="P2v-ga-Yhf" secondAttribute="bottom" id="z0M-ql-0hW"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="7LE-FI-5pv"/>
+                    <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="lightContent"/>
+                    <connections>
+                        <outlet property="placeToGo" destination="dEw-6B-7Tl" id="vJ6-Vk-nUV"/>
+                        <outlet property="saveAndStartButton" destination="nvP-Df-xQ8" id="ZOE-HU-484"/>
+                        <outlet property="timeToGo" destination="PNV-GF-Pw8" id="gsr-z6-lZd"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="hWc-Cg-4Zg" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1052" y="123.68815592203899"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="EHq-zz-Dht">
+            <objects>
+                <viewController id="UpI-16-7wu" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="8t8-Hi-f4K"/>
+                        <viewControllerLayoutGuide type="bottom" id="Ysu-UO-TmY"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="G0X-tN-Yxr">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Background 640'" translatesAutoresizingMaskIntoConstraints="NO" id="y1m-6T-2VY">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="NTp-p9-2iA" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1052" y="815"/>
+        </scene>
+        <!--Home Setting View Controller-->
+        <scene sceneID="U0z-qK-Nll">
+            <objects>
+                <viewController id="RPB-HV-azb" customClass="HomeSettingViewController" customModule="Have_to_go_home" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="wPI-hQ-Zps"/>
+                        <viewControllerLayoutGuide type="bottom" id="9Xm-f3-6fp"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Rkc-wV-0ZH">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="xFV-fz-mVS" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2242" y="-183"/>
+        </scene>
+        <!--Limit Time Setting View Controller-->
+        <scene sceneID="370-Ja-HNl">
+            <objects>
+                <viewController id="94T-4H-Duk" customClass="LimitTimeSettingViewController" customModule="Have_to_go_home" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="qRq-Oj-Rme"/>
+                        <viewControllerLayoutGuide type="bottom" id="aS9-DQ-tcg"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="9Y8-Fn-4rk">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="x5w-Qb-nR1" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2241" y="490"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="Background 640'" width="640" height="960"/>
+        <image name="alarm-clock" width="64" height="70"/>
+        <image name="placeholder-3" width="54" height="70"/>
+        <image name="setting_menu" width="71" height="48"/>
+    </resources>
+</document>

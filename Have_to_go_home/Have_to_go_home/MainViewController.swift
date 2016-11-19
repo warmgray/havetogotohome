@@ -10,24 +10,43 @@ import UIKit
 
 class MainViewController: UIViewController {
     
-    var firstAccess : Bool = true
 
+    @IBOutlet var mainMessage: UILabel!
+    @IBOutlet var timer: UILabel!
+    @IBOutlet weak var timeLimitMessage: UILabel!
+    
+    @IBOutlet weak var missionHeader: UILabel!
+    @IBOutlet weak var transportation: UILabel!
+    @IBOutlet weak var missionTail: UILabel!
+    
+    @IBOutlet weak var wayInfoMessage: UILabel!
+    @IBOutlet weak var transportationArrivalTime: UILabel!
+    
+    @IBOutlet weak var bottomButtonMessage: UIButton!
+    
+    
+    
     override func viewDidLoad() {
-        sleep(2)
         super.viewDidLoad()
-        self.movetToNextPage()
+        loadBottomButton()
+        loadArrivalTimeLabel()
     }
     
-    func movetToNextPage() {
-        if(firstAccess==true) {
-            print("moveTo Method Start")
-            performSegue(withIdentifier: "goToFirstSetting", sender: nil)
-            print("end")
-        } else {
-            //본 페이지로
-        }
+    func loadBottomButton () {
+        let buttonLayer = bottomButtonMessage.layer
+        buttonLayer.borderWidth = 1.0
+        buttonLayer.cornerRadius = 5
+        buttonLayer.masksToBounds = true
+        buttonLayer.borderColor = UIColor(red: 62/255, green: 163/255, blue: 253/255, alpha: 1).cgColor
     }
-
+    
+    func loadArrivalTimeLabel () {
+        let buttonLayer = transportationArrivalTime.layer
+        buttonLayer.cornerRadius = 6
+        buttonLayer.masksToBounds = true
+        buttonLayer.backgroundColor = UIColor(red: 1, green: 1, blue: 1, alpha: 0.5).cgColor
+        transportationArrivalTime.textColor = UIColor.black
+    }
     
 }
 
