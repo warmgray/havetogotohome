@@ -69,7 +69,7 @@ class DrawMainGraphic: UIView {
         
         // first we want to find the centerpoint and the radius of our rect
         let center: CGPoint = CGPoint(x: 160, y: 221)
-        let radius: CGFloat = 105
+        let radius: CGFloat = 106
         
         
         // make sure our track width is at least 1

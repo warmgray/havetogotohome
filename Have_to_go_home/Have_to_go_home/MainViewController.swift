@@ -31,8 +31,8 @@ class MainViewController: UIViewController {
         super.viewDidLoad()
         loadBottomButton()
         loadArrivalTimeLabel()
-        drawPathCircle()
-        print(baseDotCircle.bounds)
+        drawPathCircle(transportNum: 2, start: 4, percentage: 25)
+        drawPathCircle(transportNum: 5, start: 33, percentage: 20)
     }
     
     func loadBottomButton () {
@@ -48,19 +48,53 @@ class MainViewController: UIViewController {
         buttonLayer.cornerRadius = 6
         buttonLayer.masksToBounds = true
         buttonLayer.backgroundColor = UIColor(red: 1, green: 1, blue: 1, alpha: 0.5).cgColor
+
         transportationArrivalTime.textColor = UIColor.black
     }
     
     
     
-    func drawPathCircle () {
-        var circleProgress: DrawMainGraphic = DrawMainGraphic(frame: self.view.bounds)
-        circleProgress.trackWidth = 5
-        
-        circleProgress.startPoint = 0
-        circleProgress.fillPercentage = 50
+    func drawPathCircle (transportNum: Int, start:Float, percentage:Float) {
+        let circleProgress: DrawMainGraphic = DrawMainGraphic(frame: self.view.bounds)
+        let startCgFloat = CGFloat(start)
+        let perCgFloat = CGFloat(percentage)
+        circleProgress.trackWidth = 6
+        circleProgress.color = getColorOfPath(transportNum: transportNum)
+        circleProgress.startPoint = startCgFloat
+        circleProgress.fillPercentage = perCgFloat
         
         self.view.addSubview(circleProgress)
+    }
+    
+    func getColorOfPath (transportNum: Int) -> UIColor {
+        var resultColor:UIColor!
+        
+        let modNum = transportNum % 10
+        switch modNum {
+        
+        case 1:
+            resultColor = UIColor(red: 0/255, green: 73/255, blue: 139/255, alpha: 1)
+        case 2:
+            resultColor = UIColor(red: 0, green: 146/255, blue: 70/255, alpha: 1)
+        case 3:
+            resultColor = UIColor(red: 243/255, green: 102/255, blue: 48/255, alpha: 1)
+        case 4:
+            resultColor = UIColor(red: 0, green: 162/255, blue: 209/255, alpha: 1)
+        case 5:
+            resultColor = UIColor(red: 142/255, green: 128/255, blue: 75/255, alpha: 1)
+        case 6:
+            resultColor = UIColor(red: 158/255, green: 69/255, blue: 16/255, alpha: 1)
+        case 7:
+            resultColor = UIColor(red: 93/255, green: 102/255, blue: 25/255, alpha: 1)
+        case 8:
+            resultColor = UIColor(red: 214/255, green: 64/255, blue: 106/255, alpha: 1)
+        case 9:
+            resultColor = UIColor(red: 142/255, green: 118/255, blue: 75/255, alpha: 1)
+        default:
+            resultColor = UIColor(red: 52/255, green: 86/255, blue: 250/255, alpha: 1)
+        }
+        
+        return resultColor
     }
     
 }
