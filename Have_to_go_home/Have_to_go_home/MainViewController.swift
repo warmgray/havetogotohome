@@ -31,6 +31,8 @@ class MainViewController: UIViewController {
         super.viewDidLoad()
         loadBottomButton()
         loadArrivalTimeLabel()
+        drawPathCircle()
+        print(baseDotCircle.bounds)
     }
     
     func loadBottomButton () {
@@ -47,6 +49,18 @@ class MainViewController: UIViewController {
         buttonLayer.masksToBounds = true
         buttonLayer.backgroundColor = UIColor(red: 1, green: 1, blue: 1, alpha: 0.5).cgColor
         transportationArrivalTime.textColor = UIColor.black
+    }
+    
+    
+    
+    func drawPathCircle () {
+        var circleProgress: DrawMainGraphic = DrawMainGraphic(frame: self.view.bounds)
+        circleProgress.trackWidth = 5
+        
+        circleProgress.startPoint = 0
+        circleProgress.fillPercentage = 50
+        
+        self.view.addSubview(circleProgress)
     }
     
 }

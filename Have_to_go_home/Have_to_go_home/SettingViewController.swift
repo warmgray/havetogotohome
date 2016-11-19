@@ -15,7 +15,7 @@ class SettingViewController: UIViewController, CLLocationManagerDelegate {
     @IBOutlet weak var placeToGo: UILabel!
     @IBOutlet weak var timeToGo: UILabel!
     
-    var isFirst : Bool = true
+    var isFirst : Bool = false
     
     var locationManager : CLLocationManager = CLLocationManager()
     var startLocation : CLLocation!
@@ -74,6 +74,10 @@ class SettingViewController: UIViewController, CLLocationManagerDelegate {
     override func viewDidLoad() {
         
         super.viewDidLoad()
+        let parser = loadToHomeParser(arr:"11:00", usr:"37.521911,126.924314", home:"37.292070,126.854641")
+        parser.getDataList()
+        print(parser.datalist)
+        
         self.loadSaveAndStartButton()
         self.loadInputLabels()
         // alarm permission 맨 처음에 해야 될 것들임.
@@ -88,6 +92,8 @@ class SettingViewController: UIViewController, CLLocationManagerDelegate {
         startLocation = nil
         
     }
+    
+    
     
     func isFirstUser () {
         if(!isFirst) {
