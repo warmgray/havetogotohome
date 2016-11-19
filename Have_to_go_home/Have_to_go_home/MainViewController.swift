@@ -9,15 +9,23 @@
 import UIKit
 
 class MainViewController: UIViewController {
+    
+    var firstAccess : Bool = true
 
     override func viewDidLoad() {
         sleep(2)
         super.viewDidLoad()
-        _ = Timer.init(timeInterval: 1.0, target: self, selector: #selector(movetToNextPage), userInfo: nil, repeats: false)
+        self.movetToNextPage()
     }
     
     func movetToNextPage() {
-        self.performSegue(withIdentifier: "goToFirstSetting", sender: self)
+        if(firstAccess==true) {
+            print("moveTo Method Start")
+            self.performSegue(withIdentifier: "goToFirstSetting", sender: self)
+            
+        } else {
+            //본 페이지로
+        }
     }
 
     

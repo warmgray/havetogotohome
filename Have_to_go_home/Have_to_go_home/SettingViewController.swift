@@ -18,6 +18,7 @@ class SettingViewController: UIViewController {
     }
     
     override func viewDidLoad() {
+        print("view2 did load")
         super.viewDidLoad()
         self.loadSaveAndStartButton()
        

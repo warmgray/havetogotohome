@@ -2,6 +2,6 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "self:Have_to_go_home.xcodeproj">
+      location = "self:/Users/JWYOO/Documents/Xcode_project/have_to_go_home/Have_to_go_home/Have_to_go_home.xcodeproj">
    </FileRef>
 </Workspace>
