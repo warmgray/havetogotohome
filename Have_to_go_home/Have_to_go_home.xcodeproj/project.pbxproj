@@ -15,6 +15,8 @@
 		4C8FCFBB1DE018F600B5C75B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4C8FCFB91DE018F600B5C75B /* LaunchScreen.storyboard */; };
 		4C8FCFC61DE018F600B5C75B /* Have_to_go_homeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C8FCFC51DE018F600B5C75B /* Have_to_go_homeTests.swift */; };
 		4C8FCFE41DE02EF300B5C75B /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C8FCFE31DE02EF300B5C75B /* SettingViewController.swift */; };
+		4CF710301DE08EEA00520864 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CF7102F1DE08EEA00520864 /* MapViewController.swift */; };
+		4CF710321DE08F0500520864 /* LimitTimeSettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CF710311DE08F0500520864 /* LimitTimeSettingViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,6 +42,8 @@
 		4C8FCFC51DE018F600B5C75B /* Have_to_go_homeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Have_to_go_homeTests.swift; sourceTree = "<group>"; };
 		4C8FCFC71DE018F600B5C75B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4C8FCFE31DE02EF300B5C75B /* SettingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingViewController.swift; sourceTree = "<group>"; };
+		4CF7102F1DE08EEA00520864 /* MapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
+		4CF710311DE08F0500520864 /* LimitTimeSettingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LimitTimeSettingViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -109,6 +113,8 @@
 			children = (
 				4C8FCFAF1DE018F600B5C75B /* MainViewController.swift */,
 				4C8FCFE31DE02EF300B5C75B /* SettingViewController.swift */,
+				4CF7102F1DE08EEA00520864 /* MapViewController.swift */,
+				4CF710311DE08F0500520864 /* LimitTimeSettingViewController.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -184,7 +190,7 @@
 				TargetAttributes = {
 					4C8FCFA91DE018F600B5C75B = {
 						CreatedOnToolsVersion = 8.1;
-						DevelopmentTeam = R6PZYSY59H;
+						DevelopmentTeam = 2U8WP57VU8;
 						ProvisioningStyle = Automatic;
 					};
 					4C8FCFC01DE018F600B5C75B = {
@@ -238,9 +244,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4CF710321DE08F0500520864 /* LimitTimeSettingViewController.swift in Sources */,
 				4C8FCFB01DE018F600B5C75B /* MainViewController.swift in Sources */,
 				4C8FCFAE1DE018F600B5C75B /* AppDelegate.swift in Sources */,
 				4C8FCFE41DE02EF300B5C75B /* SettingViewController.swift in Sources */,
+				4CF710301DE08EEA00520864 /* MapViewController.swift in Sources */,
 				4C8FCFB61DE018F600B5C75B /* Have_to_go_home.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -380,11 +388,11 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEVELOPMENT_TEAM = R6PZYSY59H;
+				DEVELOPMENT_TEAM = 2U8WP57VU8;
 				INFOPLIST_FILE = Have_to_go_home/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "kr.co.Have-to-go-home";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.jwYoo.Have-to-go-home";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 			};
@@ -396,11 +404,11 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEVELOPMENT_TEAM = R6PZYSY59H;
+				DEVELOPMENT_TEAM = 2U8WP57VU8;
 				INFOPLIST_FILE = Have_to_go_home/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "kr.co.Have-to-go-home";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.jwYoo.Have-to-go-home";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 			};
@@ -453,6 +461,7 @@
 				4C8FCFCC1DE018F600B5C75B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		4C8FCFCD1DE018F600B5C75B /* Build configuration list for PBXNativeTarget "Have_to_go_homeTests" */ = {
 			isa = XCConfigurationList;
@@ -461,6 +470,7 @@
 				4C8FCFCF1DE018F600B5C75B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
