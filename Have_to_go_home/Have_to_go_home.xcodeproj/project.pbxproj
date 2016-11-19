@@ -17,7 +17,6 @@
 		4C8FCFDE1DE029D500B5C75B /* bg_image in Resources */ = {isa = PBXBuildFile; fileRef = 4C8FCFDD1DE029D500B5C75B /* bg_image */; };
 		4C8FCFE01DE029EE00B5C75B /* icon_image in Resources */ = {isa = PBXBuildFile; fileRef = 4C8FCFDF1DE029EE00B5C75B /* icon_image */; };
 		4C8FCFE41DE02EF300B5C75B /* SetHomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C8FCFE31DE02EF300B5C75B /* SetHomeViewController.swift */; };
-		4C8FCFE61DE0343600B5C75B /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4C8FCFE51DE0343600B5C75B /* Images.xcassets */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -45,7 +44,6 @@
 		4C8FCFDD1DE029D500B5C75B /* bg_image */ = {isa = PBXFileReference; lastKnownFileType = folder; path = bg_image; sourceTree = "<group>"; };
 		4C8FCFDF1DE029EE00B5C75B /* icon_image */ = {isa = PBXFileReference; lastKnownFileType = folder; path = icon_image; sourceTree = "<group>"; };
 		4C8FCFE31DE02EF300B5C75B /* SetHomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SetHomeViewController.swift; sourceTree = "<group>"; };
-		4C8FCFE51DE0343600B5C75B /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,7 +97,6 @@
 				4C8FCFB91DE018F600B5C75B /* LaunchScreen.storyboard */,
 				4C8FCFBC1DE018F600B5C75B /* Info.plist */,
 				4C8FCFB41DE018F600B5C75B /* Have_to_go_home.xcdatamodeld */,
-				4C8FCFE51DE0343600B5C75B /* Images.xcassets */,
 			);
 			path = Have_to_go_home;
 			sourceTree = "<group>";
@@ -229,7 +226,6 @@
 			files = (
 				4C8FCFBB1DE018F600B5C75B /* LaunchScreen.storyboard in Resources */,
 				4C8FCFDE1DE029D500B5C75B /* bg_image in Resources */,
-				4C8FCFE61DE0343600B5C75B /* Images.xcassets in Resources */,
 				4C8FCFE01DE029EE00B5C75B /* icon_image in Resources */,
 				4C8FCFB81DE018F600B5C75B /* Assets.xcassets in Resources */,
 				4C8FCFB31DE018F600B5C75B /* Main.storyboard in Resources */,
