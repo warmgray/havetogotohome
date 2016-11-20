@@ -90,7 +90,7 @@
                                             <constraint firstAttribute="width" constant="21.5" id="jk8-vo-EYi"/>
                                         </constraints>
                                     </imageView>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="돌아가야할 장소를 입력하세요" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dEw-6B-7Tl">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="돌아가야할 장소를 설정하세요" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dEw-6B-7Tl">
                                         <rect key="frame" x="50" y="0.0" width="150" height="22"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="21.5" id="OFk-br-RSf"/>
@@ -162,7 +162,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hWc-Cg-4Zg" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1052" y="123.68815592203899"/>
+            <point key="canvasLocation" x="1991.2" y="123.68815592203899"/>
         </scene>
         <!--Main View Controller-->
         <scene sceneID="EHq-zz-Dht">
@@ -391,12 +391,12 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="NTp-p9-2iA" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1052" y="1245.4272863568217"/>
+            <point key="canvasLocation" x="1602" y="1209"/>
         </scene>
-        <!--View Controller-->
+        <!--Fail View Controller-->
         <scene sceneID="rDK-z2-XFV">
             <objects>
-                <viewController id="UR5-QG-X9g" sceneMemberID="viewController">
+                <viewController id="UR5-QG-X9g" customClass="FailViewController" customModule="Have_to_go_home" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="qRA-hQ-JQ5"/>
                         <viewControllerLayoutGuide type="bottom" id="b27-oc-htb"/>
@@ -404,17 +404,109 @@
                     <view key="view" contentMode="scaleToFill" id="Bu3-hi-auB">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Background 640'" translatesAutoresizingMaskIntoConstraints="NO" id="i9U-ic-R3F">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="집에는 가야지" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nOc-va-ZYp">
+                                <rect key="frame" x="141" y="37" width="93" height="15"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="93" id="7rA-ZI-99p"/>
+                                    <constraint firstAttribute="height" constant="15" id="9j8-5p-hD9"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="AppleSDGothicNeo-Bold" family="Apple SD Gothic Neo" pointSize="12"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="setting_menu" translatesAutoresizingMaskIntoConstraints="NO" id="RP5-lz-NYW">
+                                <rect key="frame" x="16" y="20" width="20" height="14"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="20" id="HkN-UD-FyI"/>
+                                    <constraint firstAttribute="height" constant="14" id="gdq-L7-SgR"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="통금시간이 지났어요... T.T" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uYF-yc-YkN">
+                                <rect key="frame" x="62" y="179" width="250" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="9LT-hj-WFG"/>
+                                    <constraint firstAttribute="width" constant="250" id="Tz5-5v-1QX"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="20"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wvr-J2-oR1">
+                                <rect key="frame" x="53" y="445" width="268" height="44"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="DsS-n3-TLS"/>
+                                    <constraint firstAttribute="width" constant="268" id="HKq-57-Iu8"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="AppleSDGothicNeo-Light" family="Apple SD Gothic Neo" pointSize="13"/>
+                                <state key="normal" title="그래도 집에는 가야지!">
+                                    <color key="titleColor" red="0.095349203020134235" green="0.52351614932885859" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SPG-3A-vrU">
+                                <rect key="frame" x="53" y="513" width="268" height="44"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="268" id="hR5-dd-taV"/>
+                                    <constraint firstAttribute="height" constant="44" id="qOt-gW-D4y"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="AppleSDGothicNeo-Light" family="Apple SD Gothic Neo" pointSize="13"/>
+                                <state key="normal" title="나에게 내일은 없다!">
+                                    <color key="titleColor" red="1" green="0.45108011744966364" blue="0.55083368288590606" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="uYF-yc-YkN" firstAttribute="top" secondItem="nOc-va-ZYp" secondAttribute="bottom" constant="127" id="0Ak-pb-QJ7"/>
+                            <constraint firstItem="i9U-ic-R3F" firstAttribute="top" secondItem="Bu3-hi-auB" secondAttribute="top" id="4eP-pN-0Oj"/>
+                            <constraint firstItem="RP5-lz-NYW" firstAttribute="top" secondItem="qRA-hQ-JQ5" secondAttribute="bottom" constant="17" id="5gD-ai-vfv"/>
+                            <constraint firstItem="b27-oc-htb" firstAttribute="top" secondItem="SPG-3A-vrU" secondAttribute="bottom" constant="110" id="BCG-6Y-PXa"/>
+                            <constraint firstItem="SPG-3A-vrU" firstAttribute="top" secondItem="wvr-J2-oR1" secondAttribute="bottom" constant="24" id="Ejd-TF-r3F"/>
+                            <constraint firstItem="wvr-J2-oR1" firstAttribute="centerX" secondItem="Bu3-hi-auB" secondAttribute="centerX" id="S6T-Rg-Dga"/>
+                            <constraint firstItem="nOc-va-ZYp" firstAttribute="top" secondItem="qRA-hQ-JQ5" secondAttribute="bottom" constant="17" id="YrK-Ny-fCj"/>
+                            <constraint firstItem="nOc-va-ZYp" firstAttribute="centerX" secondItem="Bu3-hi-auB" secondAttribute="centerX" id="bxI-yL-Ebu"/>
+                            <constraint firstItem="RP5-lz-NYW" firstAttribute="leading" secondItem="Bu3-hi-auB" secondAttribute="leadingMargin" constant="15" id="ep8-1o-8cT"/>
+                            <constraint firstItem="uYF-yc-YkN" firstAttribute="centerX" secondItem="Bu3-hi-auB" secondAttribute="centerX" id="fdK-qL-6ed"/>
+                            <constraint firstItem="i9U-ic-R3F" firstAttribute="leading" secondItem="Bu3-hi-auB" secondAttribute="leading" id="kPj-ey-clE"/>
+                            <constraint firstItem="SPG-3A-vrU" firstAttribute="centerX" secondItem="Bu3-hi-auB" secondAttribute="centerX" id="wWQ-Rl-xSp"/>
+                            <constraint firstItem="b27-oc-htb" firstAttribute="top" secondItem="i9U-ic-R3F" secondAttribute="bottom" id="xiA-Fm-vMG"/>
+                            <constraint firstAttribute="trailing" secondItem="i9U-ic-R3F" secondAttribute="trailing" id="yVe-id-tYe"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="butGoHome" destination="wvr-J2-oR1" id="LuM-hJ-tIB"/>
+                        <outlet property="noFuture" destination="SPG-3A-vrU" id="Lrm-u9-8XJ"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZxI-Ct-uW1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2241" y="1245"/>
+            <point key="canvasLocation" x="2391" y="1209"/>
         </scene>
         <!--View Controller-->
+        <scene sceneID="Hhg-Qs-QP1">
+            <objects>
+                <viewController id="1B4-ip-a2d" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="ydZ-LK-lhq"/>
+                        <viewControllerLayoutGuide type="bottom" id="ZGp-cq-yzF"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="tmJ-cW-Icz">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ftE-nn-aQv" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3180" y="1198"/>
+        </scene>
+        <!--Map View Controller-->
         <scene sceneID="U0z-qK-Nll">
             <objects>
-                <viewController id="RPB-HV-azb" sceneMemberID="viewController">
+                <viewController id="RPB-HV-azb" customClass="MapViewController" customModule="Have_to_go_home" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="wPI-hQ-Zps"/>
                         <viewControllerLayoutGuide type="bottom" id="9Xm-f3-6fp"/>
@@ -422,17 +514,64 @@
                     <view key="view" contentMode="scaleToFill" id="Rkc-wV-0ZH">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Background 640'" translatesAutoresizingMaskIntoConstraints="NO" id="Owh-Qf-DTb">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                            </imageView>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" pitchEnabled="NO" showsUserLocation="YES" showsBuildings="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QDQ-x2-hfz">
+                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                            </mapView>
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TfR-o9-toE">
+                                <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="375" id="fGp-e0-RVs"/>
+                                    <constraint firstAttribute="height" constant="44" id="tZu-0f-wBB"/>
+                                </constraints>
+                                <color key="barTintColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <textAttributes key="titleTextAttributes">
+                                    <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                </textAttributes>
+                                <items>
+                                    <navigationItem title="집 위치 설정" id="TR0-jx-Whh">
+                                        <barButtonItem key="leftBarButtonItem" image="left-arrow" id="ksE-Rd-AeG">
+                                            <inset key="imageInsets" minX="6" minY="9" maxX="6" maxY="9"/>
+                                            <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        </barButtonItem>
+                                        <barButtonItem key="rightBarButtonItem" systemItem="done" id="v1P-As-h5D">
+                                            <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="Owh-Qf-DTb" secondAttribute="trailing" id="0cY-Ik-Njx"/>
+                            <constraint firstItem="TfR-o9-toE" firstAttribute="top" secondItem="wPI-hQ-Zps" secondAttribute="bottom" id="2oA-sj-G2B"/>
+                            <constraint firstAttribute="trailing" secondItem="TfR-o9-toE" secondAttribute="trailing" id="6fi-Zc-qbk"/>
+                            <constraint firstItem="9Xm-f3-6fp" firstAttribute="top" secondItem="QDQ-x2-hfz" secondAttribute="bottom" id="9LQ-63-s0O"/>
+                            <constraint firstItem="TfR-o9-toE" firstAttribute="top" secondItem="wPI-hQ-Zps" secondAttribute="bottom" id="CZb-fT-OpC"/>
+                            <constraint firstItem="Owh-Qf-DTb" firstAttribute="top" secondItem="Rkc-wV-0ZH" secondAttribute="top" id="DoP-NJ-w5p"/>
+                            <constraint firstItem="TfR-o9-toE" firstAttribute="leading" secondItem="Rkc-wV-0ZH" secondAttribute="leading" id="EcC-by-jLP"/>
+                            <constraint firstItem="QDQ-x2-hfz" firstAttribute="leading" secondItem="Rkc-wV-0ZH" secondAttribute="leading" id="Pws-Pb-Oq5"/>
+                            <constraint firstItem="Owh-Qf-DTb" firstAttribute="leading" secondItem="Rkc-wV-0ZH" secondAttribute="leading" id="TJw-fV-kqS"/>
+                            <constraint firstItem="QDQ-x2-hfz" firstAttribute="top" secondItem="TfR-o9-toE" secondAttribute="bottom" id="ZBy-qP-sJQ"/>
+                            <constraint firstAttribute="trailing" secondItem="QDQ-x2-hfz" secondAttribute="trailing" id="fF7-Ez-fh7"/>
+                            <constraint firstItem="9Xm-f3-6fp" firstAttribute="top" secondItem="Owh-Qf-DTb" secondAttribute="bottom" id="qg3-ye-8HA"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="mKMapViewOutlet" destination="QDQ-x2-hfz" id="LUe-uq-gLm"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xFV-fz-mVS" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2242" y="-183"/>
+            <point key="canvasLocation" x="3180" y="-183.05847076461771"/>
         </scene>
-        <!--View Controller-->
+        <!--Limit Time Setting View Controller-->
         <scene sceneID="370-Ja-HNl">
             <objects>
-                <viewController id="94T-4H-Duk" sceneMemberID="viewController">
+                <viewController id="94T-4H-Duk" customClass="LimitTimeSettingViewController" customModule="Have_to_go_home" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="qRq-Oj-Rme"/>
                         <viewControllerLayoutGuide type="bottom" id="aS9-DQ-tcg"/>
@@ -440,12 +579,87 @@
                     <view key="view" contentMode="scaleToFill" id="9Y8-Fn-4rk">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Background 640'" translatesAutoresizingMaskIntoConstraints="NO" id="itE-bm-CEd">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GhG-Lw-gT2">
+                                <rect key="frame" x="53" y="416" width="268" height="44"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="268" id="2YP-Or-cIj"/>
+                                    <constraint firstAttribute="height" constant="44" id="ZCo-X4-yq9"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="AppleSDGothicNeo-Light" family="Apple SD Gothic Neo" pointSize="13"/>
+                                <state key="normal" title=" 통금시간 설정"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MxU-Yn-u25">
+                                <rect key="frame" x="53" y="477" width="268" height="44"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="268" id="SUe-t1-d8L"/>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="44" id="Yav-Dr-pyJ"/>
+                                    <constraint firstAttribute="height" constant="44" id="eCy-zi-RQp"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="268" id="glK-1X-UmI"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="AppleSDGothicNeo-Light" family="Apple SD Gothic Neo" pointSize="13"/>
+                                <state key="normal" title="통금시간 없음 ^^">
+                                    <color key="titleColor" red="0.96470588235294119" green="0.47450980392156861" blue="0.46666666666666667" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                            </button>
+                            <datePicker contentMode="scaleToFill" highlighted="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="time" minuteInterval="10" useCurrentDate="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bRr-p3-Kwx">
+                                <rect key="frame" x="0.0" y="170" width="375" height="216"/>
+                                <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <date key="date" timeIntervalSinceReferenceDate="501292547.119187">
+                                    <!--2016-11-19 23:55:47 +0000-->
+                                </date>
+                            </datePicker>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="언제까지 들어갈까요?" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6F9-DP-sJr">
+                                <rect key="frame" x="87" y="121" width="200" height="25"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="200" id="H5y-fU-HXE"/>
+                                    <constraint firstAttribute="height" constant="25" id="YiV-RP-wtW"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="AppleSDGothicNeo-Bold" family="Apple SD Gothic Neo" pointSize="20"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="u6v-zm-8gp">
+                                <rect key="frame" x="16" y="20" width="40" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="ced-tq-6gX"/>
+                                    <constraint firstAttribute="width" constant="40" id="gG9-2W-Ugi"/>
+                                </constraints>
+                                <inset key="imageEdgeInsets" minX="10" minY="10" maxX="10" maxY="10"/>
+                                <state key="normal" image="left-arrow"/>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="aS9-DQ-tcg" firstAttribute="top" secondItem="itE-bm-CEd" secondAttribute="bottom" id="7Qj-O9-s7Y"/>
+                            <constraint firstItem="bRr-p3-Kwx" firstAttribute="top" secondItem="qRq-Oj-Rme" secondAttribute="bottom" constant="150" id="8sT-UN-8TB"/>
+                            <constraint firstItem="itE-bm-CEd" firstAttribute="top" secondItem="9Y8-Fn-4rk" secondAttribute="top" id="ABU-bv-kh5"/>
+                            <constraint firstAttribute="trailing" secondItem="itE-bm-CEd" secondAttribute="trailing" id="Bjq-1w-fjm"/>
+                            <constraint firstItem="itE-bm-CEd" firstAttribute="leading" secondItem="9Y8-Fn-4rk" secondAttribute="leading" id="NUA-h9-DcZ"/>
+                            <constraint firstItem="6F9-DP-sJr" firstAttribute="top" secondItem="qRq-Oj-Rme" secondAttribute="bottom" constant="101" id="Q24-Fo-UJn"/>
+                            <constraint firstItem="u6v-zm-8gp" firstAttribute="leading" secondItem="9Y8-Fn-4rk" secondAttribute="leadingMargin" id="QBa-E1-uYa"/>
+                            <constraint firstItem="MxU-Yn-u25" firstAttribute="top" secondItem="GhG-Lw-gT2" secondAttribute="bottom" constant="17" id="QWF-a6-kWB"/>
+                            <constraint firstItem="GhG-Lw-gT2" firstAttribute="centerX" secondItem="9Y8-Fn-4rk" secondAttribute="centerX" id="Qi8-UX-2mN"/>
+                            <constraint firstAttribute="trailing" secondItem="bRr-p3-Kwx" secondAttribute="trailing" id="Vd1-B6-tPZ"/>
+                            <constraint firstItem="MxU-Yn-u25" firstAttribute="centerX" secondItem="9Y8-Fn-4rk" secondAttribute="centerX" id="ZFH-Ia-QXa"/>
+                            <constraint firstItem="6F9-DP-sJr" firstAttribute="centerX" secondItem="9Y8-Fn-4rk" secondAttribute="centerX" id="hF3-t4-iRD"/>
+                            <constraint firstItem="u6v-zm-8gp" firstAttribute="top" secondItem="qRq-Oj-Rme" secondAttribute="bottom" id="hzv-hk-MuH"/>
+                            <constraint firstItem="bRr-p3-Kwx" firstAttribute="leading" secondItem="9Y8-Fn-4rk" secondAttribute="leading" id="kJ2-c5-xsU"/>
+                            <constraint firstItem="GhG-Lw-gT2" firstAttribute="top" secondItem="bRr-p3-Kwx" secondAttribute="bottom" constant="30" id="uTq-eK-Q8f"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="noLimitTime" destination="MxU-Yn-u25" id="sho-Zg-WR5"/>
+                        <outlet property="setLimitTime" destination="GhG-Lw-gT2" id="exU-Ay-alQ"/>
+                        <outlet property="timePicker" destination="bRr-p3-Kwx" id="cMs-4b-bU9"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5w-Qb-nR1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2241" y="490"/>
+            <point key="canvasLocation" x="3180" y="490.70464767616198"/>
         </scene>
     </scenes>
     <resources>
@@ -455,6 +669,7 @@
         <image name="Group 9" width="268" height="109"/>
         <image name="Rectangle 8" width="129" height="18"/>
         <image name="alarm-clock" width="32" height="35"/>
+        <image name="left-arrow" width="34" height="34"/>
         <image name="placeholder-3" width="27" height="35"/>
         <image name="setting_menu" width="35" height="24"/>
     </resources>

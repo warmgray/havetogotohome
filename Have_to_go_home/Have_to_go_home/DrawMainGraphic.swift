@@ -16,7 +16,6 @@ class DrawMainGraphic: UIView {
     var trackWidth: CGFloat = 1
     var fillPercentage: CGFloat = 100
     
-    
     override init(frame: CGRect) {
         
         super.init(frame: frame)
@@ -101,6 +100,7 @@ class DrawMainGraphic: UIView {
         return
         
     } // func
-
+    
+    
        
 }

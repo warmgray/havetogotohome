@@ -20,6 +20,11 @@ class SettingViewController: UIViewController, CLLocationManagerDelegate {
     var locationManager : CLLocationManager = CLLocationManager()
     var startLocation : CLLocation!
     
+    var hasLimitTime: Bool!
+    var limitTime: Date!
+    var homeLocation: CLLocation!
+    
+    
     @IBAction func setHomeSegue(_ sender: Any) {
         self.performSegue(withIdentifier: "setHomeSegue", sender: nil)
     }
@@ -91,6 +96,12 @@ class SettingViewController: UIViewController, CLLocationManagerDelegate {
         locationManager.distanceFilter = 1000.0
         startLocation = nil
         
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if(segue.identifier == "setHomeSegue") {
+            
+        }
     }
     
     
