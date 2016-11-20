@@ -536,9 +536,15 @@
                                         <barButtonItem key="leftBarButtonItem" image="left-arrow" id="ksE-Rd-AeG">
                                             <inset key="imageInsets" minX="6" minY="9" maxX="6" maxY="9"/>
                                             <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                            <connections>
+                                                <action selector="backToSetting1:" destination="RPB-HV-azb" id="Ukz-06-Fy3"/>
+                                            </connections>
                                         </barButtonItem>
                                         <barButtonItem key="rightBarButtonItem" systemItem="done" id="v1P-As-h5D">
                                             <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                            <connections>
+                                                <action selector="DoneAction:" destination="RPB-HV-azb" id="23H-xR-XMC"/>
+                                            </connections>
                                         </barButtonItem>
                                     </navigationItem>
                                 </items>
@@ -562,6 +568,8 @@
                     </view>
                     <connections>
                         <outlet property="mKMapViewOutlet" destination="QDQ-x2-hfz" id="LUe-uq-gLm"/>
+                        <segue destination="upL-K2-Vfg" kind="show" identifier="homeSetDone" id="9YB-gl-Uqn"/>
+                        <segue destination="upL-K2-Vfg" kind="show" identifier="backToSetting1" id="dXN-7y-mEp"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xFV-fz-mVS" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -673,4 +681,7 @@
         <image name="placeholder-3" width="27" height="35"/>
         <image name="setting_menu" width="35" height="24"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="dXN-7y-mEp"/>
+    </inferredMetricsTieBreakers>
 </document>
