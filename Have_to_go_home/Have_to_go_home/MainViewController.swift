@@ -26,13 +26,42 @@ class MainViewController: UIViewController {
     @IBOutlet weak var baseDotCircle: UIImageView!
     
     var circleCenter:CGPoint!
+    var homeLocation:String?
+    var limitTime:String?
+    var userLocation:String?
+    
+    var circlePath:Array<circleValue> = []
+    var currentRoute:Dictionary<String,String> = [:]
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        let nsuser = UserDefaults()
+        homeLocation = nsuser.object(forKey: "home_coord") as! String?
+        limitTime = nsuser.object(forKey: "limit_time") as! String?
+        userLocation = nsuser.object(forKey: "user_location") as! String?
+        
+        if homeLocation == nil {
+            print("1")
+        } else if limitTime == nil {
+            print("2")
+        } else if userLocation == nil {
+            print("3")
+        }
+        
+        print("4")
+        let parser = loadToHomeParser(arr:limitTime!, usr:"37.566932,126.977840", home:homeLocation!) // 이후 컨트롤러 넘기기
+        print(5)
+        let result = nsuser.object(forKey: "result") as! String?
+        if result == "false" {
+            print("222")
+        }
+        currentRoute = parser.getCurrentRoute()
+        circlePath = parser.getCircleValueArray()
+        
+        
         loadBottomButton()
         loadArrivalTimeLabel()
-        drawPathCircle(transportNum: 2, start: 4, percentage: 25)
-        drawPathCircle(transportNum: 5, start: 33, percentage: 20)
+        
     }
     
     func loadBottomButton () {
@@ -54,16 +83,29 @@ class MainViewController: UIViewController {
     
     
     
-    func drawPathCircle (transportNum: Int, start:Float, percentage:Float) {
+    func drawPathCircle (color:String, start:Float, percentage:Float) {
         let circleProgress: DrawMainGraphic = DrawMainGraphic(frame: self.view.bounds)
         let startCgFloat = CGFloat(start)
         let perCgFloat = CGFloat(percentage)
         circleProgress.trackWidth = 6
-        circleProgress.color = getColorOfPath(transportNum: transportNum)
+        circleProgress.color = color.hexColor
         circleProgress.startPoint = startCgFloat
         circleProgress.fillPercentage = perCgFloat
         
         self.view.addSubview(circleProgress)
+    }
+    
+    func drawPath (circleValueArray:Array<circleValue>) {
+        var currentPoint:Float = 0.0
+        
+        for var index in 0...circleValueArray.count {
+            var circleValue:circleValue = circleValueArray[index]
+            if circleValue.color == "" {
+                drawPathCircle(color: "#F039A3", start: currentPoint, percentage: Float(circleValue.portion))
+                currentPoint += Float(circleValue.portion)
+            }
+            
+        }
     }
     
     func getColorOfPath (transportNum: Int) -> UIColor {
@@ -96,6 +138,7 @@ class MainViewController: UIViewController {
         
         return resultColor
     }
+    
     
 }
 

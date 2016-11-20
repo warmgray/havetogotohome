@@ -23,7 +23,7 @@ class SettingViewController: UIViewController, CLLocationManagerDelegate {
     var hasLimitTime: Bool!
     var limitTime: Date!
     var homeLocation: CLLocation!
-    
+    let nsuser = UserDefaults()
     
     @IBAction func setHomeSegue(_ sender: Any) {
         self.performSegue(withIdentifier: "setHomeSegue", sender: nil)
@@ -37,9 +37,23 @@ class SettingViewController: UIViewController, CLLocationManagerDelegate {
         let clickButton = saveAndStartButton.layer
         clickButton.backgroundColor = UIColor.white.cgColor
         saveAndStartButton.setTitleColor(UIColor.black, for: UIControlState.normal)
+        var homeLocString:String
+        if homeLocation == nil {
+            homeLocString = "37.566932,126.977840"
+        } else {
+            homeLocString = String(homeLocation!.coordinate.latitude) + "," + String(homeLocation!.coordinate.longitude)
+        }
+        let formater = DateFormatter()
+        formater.dateFormat = "HH:mm"
         
-        let nsuser = UserDefaults()
-        nsuser.register(defaults: ["isFirst": false])
+        var limitTimeString:String
+        if limitTime != nil {
+            limitTimeString = formater.string(from: limitTime)
+        } else {
+            limitTimeString = "04:00"
+        }
+        
+        nsuser.register(defaults: ["isFirst": false, "limit_time" : limitTimeString, "home_coord" : homeLocString])
         nsuser.synchronize()
 
         self.performSegue(withIdentifier: "firstGoToMainSegue", sender: nil)
@@ -79,10 +93,6 @@ class SettingViewController: UIViewController, CLLocationManagerDelegate {
     override func viewDidLoad() {
         
         super.viewDidLoad()
-        let parser = loadToHomeParser(arr:"11:00", usr:"37.521911,126.924314", home:"37.292070,126.854641")
-        parser.getDataList()
-        print(parser.datalist)
-        
         self.loadSaveAndStartButton()
         self.loadInputLabels()
         // alarm permission 맨 처음에 해야 될 것들임.
@@ -93,7 +103,7 @@ class SettingViewController: UIViewController, CLLocationManagerDelegate {
         locationManager.delegate = self
         locationManager.requestWhenInUseAuthorization()
         locationManager.startUpdatingLocation()
-        locationManager.distanceFilter = 1000.0
+        //locationManager.distanceFilter = 1000.0
         startLocation = nil
         
     }
@@ -105,19 +115,19 @@ class SettingViewController: UIViewController, CLLocationManagerDelegate {
     }
     
     
-    
-    func isFirstUser () {
-        if(!isFirst) {
-            self.performSegue(withIdentifier: "firstGoToMainSegue", sender: nil)
-        }
-    }
-    
-    func locationManager(manager: CLLocationManager,
+    func locationManager(_ manager: CLLocationManager,
                          didUpdateLocations locations: [CLLocation])
     {
+        print(33)
         let latestLocation: AnyObject = locations[locations.count - 1 ]
-        var latitude = String(format: "%.4f", startLocation.coordinate.latitude)
-        var longtitude = String(format: "%.4f", startLocation.coordinate.longitude)
+        let latitude = String(format: "%.4f", latestLocation.coordinate.latitude)
+        print(latitude)
+        let longtitude = String(format: "%.4f", latestLocation.coordinate.longitude)
+        var userLocation:String = latitude + "," + longtitude
+        print(userLocation)
+        userLocation = "37.566932,126.977840"
+        nsuser.register(defaults: ["user_location": userLocation])
+        nsuser.synchronize()
         
         locationManager.desiredAccuracy = kCLLocationAccuracyBest
         locationManager.delegate = self

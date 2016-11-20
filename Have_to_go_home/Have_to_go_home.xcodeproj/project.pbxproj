@@ -24,6 +24,7 @@
 		4CF7103D1DE0D51200520864 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4CF7103C1DE0D51200520864 /* CoreLocation.framework */; };
 		4CF7103F1DE1049300520864 /* FailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CF7103E1DE1049300520864 /* FailViewController.swift */; };
 		4CF710411DE116BB00520864 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4CF710401DE116BB00520864 /* MapKit.framework */; };
+		4CF710431DE14D5100520864 /* uicolorExtend.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CF710421DE14D5100520864 /* uicolorExtend.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -58,6 +59,7 @@
 		4CF7103C1DE0D51200520864 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		4CF7103E1DE1049300520864 /* FailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FailViewController.swift; sourceTree = "<group>"; };
 		4CF710401DE116BB00520864 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		4CF710421DE14D5100520864 /* uicolorExtend.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = uicolorExtend.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -151,6 +153,7 @@
 			isa = PBXGroup;
 			children = (
 				4CF710331DE09F0600520864 /* DrawMainGraphic.swift */,
+				4CF710421DE14D5100520864 /* uicolorExtend.swift */,
 			);
 			name = Service;
 			sourceTree = "<group>";
@@ -282,6 +285,7 @@
 				4C8FCFB01DE018F600B5C75B /* MainViewController.swift in Sources */,
 				4C8FCFAE1DE018F600B5C75B /* AppDelegate.swift in Sources */,
 				4C8FCFE41DE02EF300B5C75B /* SettingViewController.swift in Sources */,
+				4CF710431DE14D5100520864 /* uicolorExtend.swift in Sources */,
 				4CF710391DE0CB3D00520864 /* goHomeAlarm.swift in Sources */,
 				4CF710301DE08EEA00520864 /* MapViewController.swift in Sources */,
 				4C8FCFB61DE018F600B5C75B /* Have_to_go_home.xcdatamodeld in Sources */,
