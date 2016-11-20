@@ -40,20 +40,9 @@ class MainViewController: UIViewController {
         limitTime = nsuser.object(forKey: "limit_time") as! String?
         userLocation = nsuser.object(forKey: "user_location") as! String?
         
-        if homeLocation == nil {
-            print("1")
-        } else if limitTime == nil {
-            print("2")
-        } else if userLocation == nil {
-            print("3")
-        }
-        
-        print("4")
-        let parser = loadToHomeParser(arr:limitTime!, usr:"37.566932,126.977840", home:homeLocation!) // 이후 컨트롤러 넘기기
-        print(5)
+        let parser = loadToHomeParser(arr:"", usr:"37.508849,126.892620", home:homeLocation!) // 이후 컨트롤러 넘기기
         let result = nsuser.object(forKey: "result") as! String?
         if result == "false" {
-            print("222")
         }
         currentRoute = parser.getCurrentRoute()
         circlePath = parser.getCircleValueArray()
@@ -61,6 +50,7 @@ class MainViewController: UIViewController {
         
         loadBottomButton()
         loadArrivalTimeLabel()
+        drawPath(circleValueArray: circlePath)
         
     }
     
@@ -98,12 +88,13 @@ class MainViewController: UIViewController {
     func drawPath (circleValueArray:Array<circleValue>) {
         var currentPoint:Float = 0.0
         
-        for var index in 0...circleValueArray.count {
+        for var index in 0..<circleValueArray.count {
             var circleValue:circleValue = circleValueArray[index]
             if circleValue.color == "" {
-                drawPathCircle(color: "#F039A3", start: currentPoint, percentage: Float(circleValue.portion))
-                currentPoint += Float(circleValue.portion)
+            } else {
+                drawPathCircle(color: circleValue.color, start: currentPoint, percentage: Float(circleValue.portion))
             }
+            currentPoint += Float(circleValue.portion)
             
         }
     }
