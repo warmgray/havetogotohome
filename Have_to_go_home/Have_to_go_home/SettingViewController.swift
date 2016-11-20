@@ -39,7 +39,7 @@ class SettingViewController: UIViewController, CLLocationManagerDelegate {
         saveAndStartButton.setTitleColor(UIColor.black, for: UIControlState.normal)
         var homeLocString:String
         if homeLocation == nil {
-            homeLocString = "37.566932,126.977840"
+            homeLocString = "37.301684,126.856570"
         } else {
             homeLocString = String(homeLocation!.coordinate.latitude) + "," + String(homeLocation!.coordinate.longitude)
         }

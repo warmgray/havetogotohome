@@ -29,6 +29,8 @@ class MainViewController: UIViewController {
     var homeLocation:String?
     var limitTime:String?
     var userLocation:String?
+    var lastTime:String?
+    var leftTime:Date?
     
     var circlePath:Array<circleValue> = []
     var currentRoute:Dictionary<String,String> = [:]
@@ -40,12 +42,29 @@ class MainViewController: UIViewController {
         limitTime = nsuser.object(forKey: "limit_time") as! String?
         userLocation = nsuser.object(forKey: "user_location") as! String?
         
-        let parser = loadToHomeParser(arr:"", usr:"37.508849,126.892620", home:homeLocation!) // 이후 컨트롤러 넘기기
+        let parser = loadToHomeParser(arr:"", usr:"37.523657,126.925234", home:homeLocation!) // 이후 컨트롤러 넘기기
         let result = nsuser.object(forKey: "result") as! String?
         if result == "false" {
         }
         currentRoute = parser.getCurrentRoute()
         circlePath = parser.getCircleValueArray()
+        lastTime = nsuser.object(forKey: "first_start_time") as! String?
+        var dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
+        var initTime = dateFormatter.date(from: parser.datalist.object(forKey: "first_start_time") as! String)
+        dateFormatter.dateFormat = "HH:mm"
+        var lastTimeString = dateFormatter.string(from: initTime!)
+        timer.text = lastTimeString
+        var timeTrigger = Timer()
+        
+        dateFormatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
+        var initTimeInt = initTime?.timeIntervalSince1970
+        var now = NSDate().timeIntervalSince1970
+        var diffSeconds = Int(initTimeInt! - now)
+        var hour:Int = diffSeconds / 3600
+        var min:Int = (diffSeconds - 3600 * hour) / 60
+        
+        timeLimitMessage.text = "\(hour)시간 \(min)분 남았어요" 
         
         
         loadBottomButton()

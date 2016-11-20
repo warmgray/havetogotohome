@@ -206,7 +206,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00시간 00분 남았어요" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LAa-NS-ULl">
-                                <rect key="frame" x="118" y="253" width="139" height="21"/>
+                                <rect key="frame" x="118" y="254" width="139" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="139" id="Hne-ZC-VVc"/>
                                     <constraint firstAttribute="height" constant="21" id="KdQ-6Q-R3m"/>
@@ -663,6 +663,7 @@
                         <outlet property="noLimitTime" destination="MxU-Yn-u25" id="sho-Zg-WR5"/>
                         <outlet property="setLimitTime" destination="GhG-Lw-gT2" id="exU-Ay-alQ"/>
                         <outlet property="timePicker" destination="bRr-p3-Kwx" id="cMs-4b-bU9"/>
+                        <segue destination="upL-K2-Vfg" kind="show" id="3Tz-T5-BMZ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5w-Qb-nR1" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -682,6 +683,6 @@
         <image name="setting_menu" width="35" height="24"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="dXN-7y-mEp"/>
+        <segue reference="3Tz-T5-BMZ"/>
     </inferredMetricsTieBreakers>
 </document>
