@@ -158,6 +158,7 @@
                         <segue destination="RPB-HV-azb" kind="show" identifier="setHomeSegue" id="Y2a-HZ-qLc"/>
                         <segue destination="94T-4H-Duk" kind="show" identifier="setLimitTimeSegue" id="Mxa-OA-k7I"/>
                         <segue destination="UpI-16-7wu" kind="show" identifier="firstGoToMainSegue" id="Vvv-eP-Pva"/>
+                        <segue destination="UR5-QG-X9g" kind="show" identifier="GoHomeFailDirect" id="hgB-TF-oiH"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hWc-Cg-4Zg" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -387,6 +388,8 @@
                         <outlet property="transportation" destination="V5n-VA-hCD" id="0SG-mz-690"/>
                         <outlet property="transportationArrivalTime" destination="aPW-mR-XxL" id="EKT-qr-VFu"/>
                         <outlet property="wayInfoMessage" destination="8H0-pF-unw" id="yxu-ou-eQ2"/>
+                        <segue destination="UR5-QG-X9g" kind="show" identifier="TimeDone" id="Mdu-AQ-w0K"/>
+                        <segue destination="upL-K2-Vfg" kind="showDetail" identifier="ReSetting" id="zGO-7J-x84"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="NTp-p9-2iA" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -501,7 +504,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ftE-nn-aQv" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3180" y="1198"/>
+            <point key="canvasLocation" x="3964" y="1209"/>
         </scene>
         <!--Map View Controller-->
         <scene sceneID="U0z-qK-Nll">
@@ -599,6 +602,9 @@
                                 </constraints>
                                 <fontDescription key="fontDescription" name="AppleSDGothicNeo-Light" family="Apple SD Gothic Neo" pointSize="13"/>
                                 <state key="normal" title=" 통금시간 설정"/>
+                                <connections>
+                                    <action selector="setAndSaveTime:" destination="94T-4H-Duk" eventType="touchUpInside" id="OUc-fw-a6B"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MxU-Yn-u25">
                                 <rect key="frame" x="53" y="477" width="268" height="44"/>
@@ -612,8 +618,11 @@
                                 <state key="normal" title="통금시간 없음 ^^">
                                     <color key="titleColor" red="0.96470588235294119" green="0.47450980392156861" blue="0.46666666666666667" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
+                                <connections>
+                                    <action selector="noLimitTime:" destination="94T-4H-Duk" eventType="touchUpInside" id="xrd-QI-BLx"/>
+                                </connections>
                             </button>
-                            <datePicker contentMode="scaleToFill" highlighted="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="time" minuteInterval="10" useCurrentDate="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bRr-p3-Kwx">
+                            <datePicker contentMode="scaleToFill" highlighted="YES" selected="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="time" minuteInterval="10" useCurrentDate="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bRr-p3-Kwx">
                                 <rect key="frame" x="0.0" y="170" width="375" height="216"/>
                                 <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <date key="date" timeIntervalSinceReferenceDate="501292547.119187">
@@ -638,6 +647,9 @@
                                 </constraints>
                                 <inset key="imageEdgeInsets" minX="10" minY="10" maxX="10" maxY="10"/>
                                 <state key="normal" image="left-arrow"/>
+                                <connections>
+                                    <action selector="goBackButton:" destination="94T-4H-Duk" eventType="touchUpInside" id="UJL-wV-sxU"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -663,7 +675,7 @@
                         <outlet property="noLimitTime" destination="MxU-Yn-u25" id="sho-Zg-WR5"/>
                         <outlet property="setLimitTime" destination="GhG-Lw-gT2" id="exU-Ay-alQ"/>
                         <outlet property="timePicker" destination="bRr-p3-Kwx" id="cMs-4b-bU9"/>
-                        <segue destination="upL-K2-Vfg" kind="show" id="3Tz-T5-BMZ"/>
+                        <segue destination="upL-K2-Vfg" kind="show" identifier="goToSetting2" id="3Tz-T5-BMZ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5w-Qb-nR1" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -684,5 +696,6 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="3Tz-T5-BMZ"/>
+        <segue reference="Mdu-AQ-w0K"/>
     </inferredMetricsTieBreakers>
 </document>

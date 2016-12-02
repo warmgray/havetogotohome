@@ -51,8 +51,8 @@ class MapViewController: UIViewController, CLLocationManagerDelegate {
         if(segue.identifier == "homeSetDone") {
             let location:CLLocation = CLLocation(latitude: testlatitude, longitude: testlongitude)
             let locationString:String = String(describing: location)
-//            (segue.destination as! SettingViewController).homeLocation = location
-//            (segue.destination as! SettingViewController).placeToGo.text = locationString
+            (segue.destination as! SettingViewController).homeLocation = location
+            (segue.destination as! SettingViewController).placeToGo.text = locationString
             
             
         } else if(segue.identifier == "back") {
@@ -66,7 +66,7 @@ class MapViewController: UIViewController, CLLocationManagerDelegate {
         mKMapViewOutlet.setRegion(coordinateRegion, animated: true)
     }
     
-    func locationManager(manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         let locValue:CLLocationCoordinate2D = manager.location!.coordinate
         latitude = locValue.latitude
         longitude = locValue.longitude

@@ -13,6 +13,28 @@ class LimitTimeSettingViewController: UIViewController {
     @IBOutlet weak var timePicker: UIDatePicker!
     @IBOutlet weak var setLimitTime: UIButton!
     @IBOutlet weak var noLimitTime: UIButton!
+    @IBAction func goBackButton(_ sender: Any) {
+        performSegue(withIdentifier: "goToSetting2", sender: nil)
+    }
+    
+    @IBAction func setAndSaveTime(_ sender: Any) {
+//        var time:String?
+        
+        let timeFormatter = DateFormatter()
+        timeFormatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
+        //var timeSelectedRaw = timeFormatter.date(from: timePicker.date as String)
+        timeFormatter.dateFormat = "HH:mm"
+        //var timeSelected = timeFormatter.string(from: timeSelectedRaw!) as! String
+        //var timeString = timeSelectedRaw
+        //print(timeString)
+        
+        
+    }
+    
+    @IBAction func noLimitTime(_ sender: Any) {
+        
+    }
+    
     
     var hasLimitTime: Bool!
     var limitTime: Date!
