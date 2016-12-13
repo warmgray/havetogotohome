@@ -49,20 +49,19 @@ class MainViewController: UIViewController {
         currentRoute = parser.getCurrentRoute()
         circlePath = parser.getCircleValueArray()
         lastTime = nsuser.object(forKey: "first_start_time") as! String?
-        var dateFormatter = DateFormatter()
+        let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
-        var initTime = dateFormatter.date(from: parser.datalist.object(forKey: "first_start_time") as! String)
+        let initTime = dateFormatter.date(from: parser.datalist.object(forKey: "first_start_time") as! String)
         dateFormatter.dateFormat = "HH:mm"
-        var lastTimeString = dateFormatter.string(from: initTime!)
+        let lastTimeString = dateFormatter.string(from: initTime!)
         timer.text = lastTimeString
-        var timeTrigger = Timer()
         
         dateFormatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
-        var initTimeInt = initTime?.timeIntervalSince1970
-        var now = NSDate().timeIntervalSince1970
-        var diffSeconds = Int(initTimeInt! - now)
-        var hour:Int = diffSeconds / 3600
-        var min:Int = (diffSeconds - 3600 * hour) / 60
+        let initTimeInt = initTime?.timeIntervalSince1970
+        let now = NSDate().timeIntervalSince1970
+        let diffSeconds = Int(initTimeInt! - now)
+        let hour:Int = diffSeconds / 3600
+        let min:Int = (diffSeconds - 3600 * hour) / 60
         
         timeLimitMessage.text = "\(hour)시간 \(min)분 남았어요" 
         
@@ -100,15 +99,16 @@ class MainViewController: UIViewController {
         circleProgress.color = color.hexColor
         circleProgress.startPoint = startCgFloat
         circleProgress.fillPercentage = perCgFloat
-        
-        self.view.addSubview(circleProgress)
+        view.addSubview(circleProgress)
+        circleProgress.makeCircleCALayer()
+        circleProgress.animateCircle(duration: 5.0)
     }
     
     func drawPath (circleValueArray:Array<circleValue>) {
         var currentPoint:Float = 0.0
         
         for var index in 0..<circleValueArray.count {
-            var circleValue:circleValue = circleValueArray[index]
+            let circleValue:circleValue = circleValueArray[index]
             if circleValue.color == "" {
             } else {
                 drawPathCircle(color: circleValue.color, start: currentPoint, percentage: Float(circleValue.portion))
