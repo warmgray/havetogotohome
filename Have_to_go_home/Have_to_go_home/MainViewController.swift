@@ -68,8 +68,12 @@ class MainViewController: UIViewController {
         
         loadBottomButton()
         loadArrivalTimeLabel()
-        drawPath(circleValueArray: circlePath)
         
+        
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        drawPath(circleValueArray: circlePath)
     }
     
     func loadBottomButton () {
@@ -101,7 +105,7 @@ class MainViewController: UIViewController {
         circleProgress.fillPercentage = perCgFloat
         view.addSubview(circleProgress)
         circleProgress.makeCircleCALayer()
-        circleProgress.animateCircle(duration: 5.0)
+        circleProgress.animateCircle(duration: 0.7)
     }
     
     func drawPath (circleValueArray:Array<circleValue>) {

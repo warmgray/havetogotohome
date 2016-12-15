@@ -105,6 +105,7 @@ class DrawMainGraphic: UIView {
         circleLayer.fillColor = UIColor.clear.cgColor
         circleLayer.strokeColor = color.cgColor
         circleLayer.lineWidth = trackWidth
+        circleLayer.lineCap = kCALineCapRound
         
         circleLayer.strokeEnd = 0.0
         
@@ -113,9 +114,16 @@ class DrawMainGraphic: UIView {
     }
     
     func animateCircle(duration: TimeInterval) {
-        UIView.animate(withDuration: duration, delay: 0.0, options: UIViewAnimationOptions.curveEaseInOut, animations: {
-            self.circleLayer.strokeEnd = 1.0
-        }, completion: nil)
+        
+        CATransaction.begin()
+        let animline = CABasicAnimation(keyPath: "strokeEnd")
+        animline.fromValue         = 0
+        animline.toValue           = 1
+        animline.duration          = duration
+        animline.timingFunction    = CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseInEaseOut)
+        circleLayer.strokeEnd = 1.0
+        circleLayer.add(animline, forKey: "animateCircle")
+        CATransaction.commit()
     }
     
 }
