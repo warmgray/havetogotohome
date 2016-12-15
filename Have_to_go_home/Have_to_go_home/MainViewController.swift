@@ -14,6 +14,7 @@ class MainViewController: UIViewController {
     @IBOutlet var mainMessage: UILabel!
     @IBOutlet var timer: UILabel!
     @IBOutlet weak var timeLimitMessage: UILabel!
+    @IBOutlet weak var twoPoint: UILabel!
     
     @IBOutlet weak var missionHeader: UILabel!
     @IBOutlet weak var transportation: UILabel!
@@ -31,6 +32,8 @@ class MainViewController: UIViewController {
     var userLocation:String?
     var lastTime:String?
     var leftTime:Date?
+    
+    var dotShow:Bool = true
     
     var circlePath:Array<circleValue> = []
     var currentRoute:Dictionary<String,String> = [:]
@@ -52,7 +55,7 @@ class MainViewController: UIViewController {
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
         let initTime = dateFormatter.date(from: parser.datalist.object(forKey: "first_start_time") as! String)
-        dateFormatter.dateFormat = "HH:mm"
+        dateFormatter.dateFormat = "HH   mm"
         let lastTimeString = dateFormatter.string(from: initTime!)
         timer.text = lastTimeString
         
@@ -68,12 +71,13 @@ class MainViewController: UIViewController {
         
         loadBottomButton()
         loadArrivalTimeLabel()
-        
-        
     }
     
     override func viewDidAppear(_ animated: Bool) {
         drawPath(circleValueArray: circlePath)
+        
+        var _ = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(flickingTwoDots), userInfo: nil, repeats: true)
+        
     }
     
     func loadBottomButton () {
@@ -91,6 +95,16 @@ class MainViewController: UIViewController {
         buttonLayer.backgroundColor = UIColor(red: 1, green: 1, blue: 1, alpha: 0.5).cgColor
 
         transportationArrivalTime.textColor = UIColor.black
+    }
+    
+    func flickingTwoDots () {
+        if dotShow {
+            twoPoint.alpha = 0
+            dotShow = false
+        } else {
+            twoPoint.alpha = 1
+            dotShow = true
+        }
     }
     
     
