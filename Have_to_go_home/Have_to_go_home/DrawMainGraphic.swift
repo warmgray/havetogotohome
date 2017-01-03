@@ -106,11 +106,9 @@ class DrawMainGraphic: UIView {
         circleLayer.strokeColor = color.cgColor
         circleLayer.lineWidth = trackWidth
         circleLayer.lineCap = kCALineCapRound
-        
         circleLayer.strokeEnd = 0.0
-        
         self.layer.addSublayer(circleLayer)
-        
+
     }
     
     func animateCircle(duration: TimeInterval) {

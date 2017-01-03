@@ -26,6 +26,8 @@ class MainViewController: UIViewController {
     @IBOutlet weak var bottomButtonMessage: UIButton!
     @IBOutlet weak var baseDotCircle: UIImageView!
     
+    @IBOutlet weak var reSetting: UIButton!
+    
     var circleCenter:CGPoint!
     var homeLocation:String?
     var limitTime:String?
@@ -66,16 +68,21 @@ class MainViewController: UIViewController {
         let hour:Int = diffSeconds / 3600
         let min:Int = (diffSeconds - 3600 * hour) / 60
         
-        timeLimitMessage.text = "\(hour)시간 \(min)분 남았어요" 
+        timeLimitMessage.text = "\(hour)시간 \(min)분 남았어요"
         
         
         loadBottomButton()
         loadArrivalTimeLabel()
+        
     }
-    
+
+    @IBAction func returnSetting(_ sender: Any) {
+        print("shit")
+        self.performSegue(withIdentifier: "reSettingSegue", sender: nil)
+    }
+
     override func viewDidAppear(_ animated: Bool) {
         drawPath(circleValueArray: circlePath)
-        
         var _ = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(flickingTwoDots), userInfo: nil, repeats: true)
         
     }
@@ -106,8 +113,9 @@ class MainViewController: UIViewController {
             dotShow = true
         }
     }
-    
-    
+
+
+
     
     func drawPathCircle (color:String, start:Float, percentage:Float) {
         let circleProgress: DrawMainGraphic = DrawMainGraphic(frame: self.view.bounds)
@@ -117,7 +125,7 @@ class MainViewController: UIViewController {
         circleProgress.color = color.hexColor
         circleProgress.startPoint = startCgFloat
         circleProgress.fillPercentage = perCgFloat
-        view.addSubview(circleProgress)
+        self.view.insertSubview(circleProgress, aboveSubview: baseDotCircle)
         circleProgress.makeCircleCALayer()
         circleProgress.animateCircle(duration: 0.7)
     }
