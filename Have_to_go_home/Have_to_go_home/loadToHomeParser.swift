@@ -29,6 +29,7 @@ class loadToHomeParser{
            sessionSave()
         }
     }
+
     func getDataList(){
         do {
             datalist = try JSONSerialization.jsonObject(with: NSData(contentsOf: baseURL! as URL)! as Data, options: .allowFragments) as! [String:AnyObject] as NSDictionary
@@ -38,13 +39,14 @@ class loadToHomeParser{
         //print(datalist["result"]!)
         //print(( datalist["steps"] as! NSArray ).count)
     }
+
     func sessionSave(){
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
-        var initTime = dateFormatter.date(from: datalist["first_start_time"] as! String)
-        var lastTime = dateFormatter.date(from: datalist["last_end_time"] as! String)
-        var result:String = datalist["result"]! as! String
-        var resultType:String = datalist["result_type"]! as! String
+        let initTime = dateFormatter.date(from: datalist["first_start_time"] as! String)
+        let lastTime = dateFormatter.date(from: datalist["last_end_time"] as! String)
+        let result:String = datalist["result"]! as! String
+        let resultType:String = datalist["result_type"]! as! String
         let nsuser = UserDefaults()
         
         nsuser.register(defaults: ["first_start_time": (initTime?.description)!])
@@ -54,6 +56,7 @@ class loadToHomeParser{
         
         nsuser.synchronize()
     }
+
     func getCircleValueArray() -> Array<circleValue> {
         let arraySize:Int = (datalist["steps"] as! NSArray).count
         var totalTime:Double = Double((datalist["real_time_interval"]! as AnyObject).description)!
@@ -77,6 +80,7 @@ class loadToHomeParser{
         
         //}
     }
+
     func getCurrentRoute() -> Dictionary<String,String>{
         var now = NSDate()
         let dateFormatter = DateFormatter()

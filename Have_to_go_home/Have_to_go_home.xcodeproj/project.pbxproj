@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4C0016491E1C99470081C5E4 /* DetailPathViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C0016481E1C99470081C5E4 /* DetailPathViewController.swift */; };
 		4C8FCFAE1DE018F600B5C75B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C8FCFAD1DE018F600B5C75B /* AppDelegate.swift */; };
 		4C8FCFB01DE018F600B5C75B /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C8FCFAF1DE018F600B5C75B /* MainViewController.swift */; };
 		4C8FCFB31DE018F600B5C75B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4C8FCFB11DE018F600B5C75B /* Main.storyboard */; };
@@ -38,6 +39,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		4C0016481E1C99470081C5E4 /* DetailPathViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailPathViewController.swift; sourceTree = "<group>"; };
 		4C8FCFAA1DE018F600B5C75B /* Have_to_go_home.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Have_to_go_home.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4C8FCFAD1DE018F600B5C75B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4C8FCFAF1DE018F600B5C75B /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
@@ -136,6 +138,7 @@
 				4CF710311DE08F0500520864 /* LimitTimeSettingViewController.swift */,
 				4CF710351DE0C6DC00520864 /* MapPathViewController.swift */,
 				4CF7103E1DE1049300520864 /* FailViewController.swift */,
+				4C0016481E1C99470081C5E4 /* DetailPathViewController.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -284,6 +287,7 @@
 				4CF710321DE08F0500520864 /* LimitTimeSettingViewController.swift in Sources */,
 				4C8FCFB01DE018F600B5C75B /* MainViewController.swift in Sources */,
 				4C8FCFAE1DE018F600B5C75B /* AppDelegate.swift in Sources */,
+				4C0016491E1C99470081C5E4 /* DetailPathViewController.swift in Sources */,
 				4C8FCFE41DE02EF300B5C75B /* SettingViewController.swift in Sources */,
 				4CF710431DE14D5100520864 /* uicolorExtend.swift in Sources */,
 				4CF710391DE0CB3D00520864 /* goHomeAlarm.swift in Sources */,

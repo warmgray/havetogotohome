@@ -61,18 +61,9 @@ class MainViewController: UIViewController {
         let lastTimeString = dateFormatter.string(from: initTime!)
         timer.text = lastTimeString
         
-        dateFormatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
-        let initTimeInt = initTime?.timeIntervalSince1970
-        let now = NSDate().timeIntervalSince1970
-        let diffSeconds = Int(initTimeInt! - now)
-        let hour:Int = diffSeconds / 3600
-        let min:Int = (diffSeconds - 3600 * hour) / 60
-        
-        timeLimitMessage.text = "\(hour)시간 \(min)분 남았어요"
-        
-        
         loadBottomButton()
         loadArrivalTimeLabel()
+        countDownTimer()
         
     }
 
@@ -84,9 +75,9 @@ class MainViewController: UIViewController {
     override func viewDidAppear(_ animated: Bool) {
         drawPath(circleValueArray: circlePath)
         var _ = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(flickingTwoDots), userInfo: nil, repeats: true)
-        
+        var _ = Timer.scheduledTimer(timeInterval: 60.0, target: self, selector: #selector(countDownTimer), userInfo: nil, repeats: true)
     }
-    
+
     func loadBottomButton () {
         let buttonLayer = bottomButtonMessage.layer
         buttonLayer.borderWidth = 1.0
@@ -106,7 +97,7 @@ class MainViewController: UIViewController {
     
     func flickingTwoDots () {
         if dotShow {
-            twoPoint.alpha = 0
+            twoPoint.alpha = 0.5
             dotShow = false
         } else {
             twoPoint.alpha = 1
@@ -114,6 +105,20 @@ class MainViewController: UIViewController {
         }
     }
 
+    func countDownTimer () {
+        let parser = loadToHomeParser(arr:"", usr:"37.523657,126.925234", home:homeLocation!)
+
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
+        let initTime = dateFormatter.date(from: parser.datalist.object(forKey: "first_start_time") as! String)
+        let initTimeInt = initTime?.timeIntervalSince1970
+        let now = NSDate().timeIntervalSince1970
+        let diffSeconds = Int(initTimeInt! - now)
+        let hour:Int = diffSeconds / 3600
+        let min:Int = (diffSeconds - 3600 * hour) / 60
+
+        timeLimitMessage.text = "\(hour)시간 \(min)분 남았어요"
+    }
 
 
     

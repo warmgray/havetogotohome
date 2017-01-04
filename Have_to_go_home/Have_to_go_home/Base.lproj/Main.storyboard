@@ -514,10 +514,10 @@
             </objects>
             <point key="canvasLocation" x="2391" y="1209"/>
         </scene>
-        <!--View Controller-->
+        <!--Detail Path View Controller-->
         <scene sceneID="Hhg-Qs-QP1">
             <objects>
-                <viewController id="1B4-ip-a2d" sceneMemberID="viewController">
+                <viewController id="1B4-ip-a2d" customClass="DetailPathViewController" customModule="Have_to_go_home" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="ydZ-LK-lhq"/>
                         <viewControllerLayoutGuide type="bottom" id="ZGp-cq-yzF"/>
@@ -525,12 +525,23 @@
                     <view key="view" contentMode="scaleToFill" id="tmJ-cW-Icz">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Background 640'" translatesAutoresizingMaskIntoConstraints="NO" id="gfF-Z9-ikb">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                            </imageView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="gfF-Z9-ikb" secondAttribute="trailing" id="66J-2Z-hPD"/>
+                            <constraint firstItem="gfF-Z9-ikb" firstAttribute="leading" secondItem="tmJ-cW-Icz" secondAttribute="leading" id="Dsr-mr-Ci7"/>
+                            <constraint firstItem="ZGp-cq-yzF" firstAttribute="top" secondItem="gfF-Z9-ikb" secondAttribute="bottom" id="jFR-nE-bIi"/>
+                            <constraint firstItem="gfF-Z9-ikb" firstAttribute="top" secondItem="tmJ-cW-Icz" secondAttribute="top" id="lpB-LS-lyV"/>
+                        </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ftE-nn-aQv" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3964" y="1209"/>
+            <point key="canvasLocation" x="1600.8" y="2000.1499250374814"/>
         </scene>
         <!--Map View Controller-->
         <scene sceneID="U0z-qK-Nll">
