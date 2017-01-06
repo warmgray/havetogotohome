@@ -50,6 +50,8 @@ class MainViewController: UIViewController {
         let parser = loadToHomeParser(arr:"", usr:"37.523657,126.925234", home:homeLocation!) // 이후 컨트롤러 넘기기
         let result = nsuser.object(forKey: "result") as! String?
         if result == "false" {
+
+            self.performSegue(withIdentifier: "reSettingSegue",sender: nil)
         }
         currentRoute = parser.getCurrentRoute()
         circlePath = parser.getCircleValueArray()

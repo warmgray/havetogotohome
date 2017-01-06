@@ -22,9 +22,12 @@ class MapViewController: UIViewController, CLLocationManagerDelegate {
         performSegue(withIdentifier: "backToSetting1", sender: nil)
     }
     
+    @IBOutlet weak var locationSearchBar: UINavigationBar!
+    
+    var resultSearchController : UISearchController? = nil
     
     let regionRadius: CLLocationDistance = 1000
-    let locationManager = CLLocationManager()
+    var locationManager = CLLocationManager()
     var latitude: CLLocationDegrees = 0.0
     var longitude: CLLocationDegrees = 0.0
     let testlatitude : CLLocationDegrees = 37.568197
@@ -33,19 +36,50 @@ class MapViewController: UIViewController, CLLocationManagerDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.locationManager.requestAlwaysAuthorization()
+        let locationSearchTable = storyboard!.instantiateViewController(withIdentifier: "LocationSearchTable") as! LocationSearchTable
         
-        // For use in foreground
-        self.locationManager.requestWhenInUseAuthorization()
+        resultSearchController = UISearchController(searchResultsController: locationSearchTable)
+        resultSearchController?.searchResultsUpdater = locationSearchTable
         
-        if CLLocationManager.locationServicesEnabled() {
+        let searchBar = resultSearchController!.searchBar
+        searchBar.sizeToFit()
+        searchBar.placeholder = "집 위치 설정"
+        
+        locationSearchBar.topItem?.titleView = resultSearchController?.searchBar
+        
+        locationSearchTable.tableView.contentInset = UIEdgeInsetsMake(88+UIApplication.shared.statusBarFrame.height, 0, UIApplication.shared.statusBarFrame.height, 0)
+        
+        definesPresentationContext = true
+        resultSearchController?.hidesNavigationBarDuringPresentation = false
+        resultSearchController?.dimsBackgroundDuringPresentation = false
+        
+        
+        locationSearchTable.mapView = mKMapViewOutlet
+        
+        if (CLLocationManager.locationServicesEnabled())
+        {
+            locationManager = CLLocationManager()
             locationManager.delegate = self
-            locationManager.desiredAccuracy = kCLLocationAccuracyNearestTenMeters
+            locationManager.desiredAccuracy = kCLLocationAccuracyBest
+            locationManager.requestAlwaysAuthorization()
             locationManager.startUpdatingLocation()
         }
-        centerMapOnLocation(location: CLLocation(latitude: latitude, longitude: longitude))
 
+        mKMapViewOutlet.showsUserLocation = true
+        centerMapOnLocation(location: locationManager.location!)
+        
         // Do any additional setup after loading the view.
+    }
+
+    func locationManager(manager: CLLocationManager, didUpdateLocations locations: [CLLocation])
+    {
+
+        let location = locations.last! as CLLocation
+
+        let center = CLLocationCoordinate2D(latitude: location.coordinate.latitude, longitude: location.coordinate.longitude)
+        let region = MKCoordinateRegion(center: center, span: MKCoordinateSpan(latitudeDelta: 0.01, longitudeDelta: 0.01))
+
+        self.mKMapViewOutlet.setRegion(region, animated: true)
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -59,6 +93,7 @@ class MapViewController: UIViewController, CLLocationManagerDelegate {
         } else if(segue.identifier == "back") {
             
         }
+        
     }
     
     func centerMapOnLocation(location: CLLocation) {
