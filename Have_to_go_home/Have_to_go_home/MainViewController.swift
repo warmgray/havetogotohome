@@ -124,7 +124,7 @@ class MainViewController: UIViewController {
 
 
     
-    func drawPathCircle (color:String, start:Float, percentage:Float) {
+    func drawPathCircle (trafficInfo:String, color:String, start:Float, percentage:Float) {
         let circleProgress: DrawMainGraphic = DrawMainGraphic(frame: self.view.bounds)
         let startCgFloat = CGFloat(start)
         let perCgFloat = CGFloat(percentage)
@@ -132,6 +132,7 @@ class MainViewController: UIViewController {
         circleProgress.color = color.hexColor
         circleProgress.startPoint = startCgFloat
         circleProgress.fillPercentage = perCgFloat
+        circleProgress.trafficInfo = trafficInfo
         self.view.insertSubview(circleProgress, aboveSubview: baseDotCircle)
         circleProgress.makeCircleCALayer()
         circleProgress.animateCircle(duration: 0.7)
@@ -144,7 +145,7 @@ class MainViewController: UIViewController {
             let circleValue:circleValue = circleValueArray[index]
             if circleValue.color == "" {
             } else {
-                drawPathCircle(color: circleValue.color, start: currentPoint, percentage: Float(circleValue.portion))
+                drawPathCircle(trafficInfo:circleValue.trafficNum, color: circleValue.color, start: currentPoint, percentage: Float(circleValue.portion))
             }
             currentPoint += Float(circleValue.portion)
             

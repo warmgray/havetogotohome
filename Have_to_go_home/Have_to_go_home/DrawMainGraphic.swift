@@ -16,6 +16,7 @@ class DrawMainGraphic: UIView {
     var trackWidth: CGFloat = 1
     var fillPercentage: CGFloat = 100
     var circleLayer: CAShapeLayer!
+    var trafficInfo: String!
     
     override init(frame: CGRect) {
         
@@ -87,8 +88,9 @@ class DrawMainGraphic: UIView {
 //    } // func
     
     func makeCircleCALayer() {
-        let center: CGPoint = CGPoint(x: self.frame.width/2, y: 221)
+        let center: CGPoint = CGPoint(x: self.frame.width/2, y: 225	)
         let radius: CGFloat = 106
+        let trafficInfoCenter: CGPoint!
         
         if ( 1 > self.trackWidth) {
             self.trackWidth = 1
@@ -101,6 +103,23 @@ class DrawMainGraphic: UIView {
         let (graphStartingPoint, graphEndingPoint) = self.getGraphStartAndEndPointsInRadians()
         
         let percentagePath = UIBezierPath(arcCenter: center, radius: radius - (trackWidth / 2), startAngle: graphStartingPoint, endAngle: graphEndingPoint, clockwise: true)
+        let midPointAngle = (graphStartingPoint + graphEndingPoint)/2
+        trafficInfoCenter = CGPoint(x: center.x + radius*cos(midPointAngle), y: center.y + radius*sin(midPointAngle))
+        
+        let trafficInfoLabel = UILabel(frame: CGRect(x: trafficInfoCenter.x - 15 , y: trafficInfoCenter.y - 7, width: 30, height: 14))
+        let trafficInfoLayer = trafficInfoLabel.layer
+        
+        trafficInfoLabel.font = UIFont(name: "Montserrat-Bold", size: 10)
+        trafficInfoLabel.text = trafficInfo
+        trafficInfoLabel.textAlignment = .center
+        trafficInfoLabel.textColor = color
+        
+        trafficInfoLayer.borderColor = color.cgColor
+        trafficInfoLayer.borderWidth = 1.2
+        trafficInfoLayer.cornerRadius = 5
+        trafficInfoLayer.backgroundColor = UIColor(red: 18/255, green: 20/255, blue: 37/255, alpha: 1).cgColor
+        trafficInfoLayer.masksToBounds = true
+        
         circleLayer.path = percentagePath.cgPath
         circleLayer.fillColor = UIColor.clear.cgColor
         circleLayer.strokeColor = color.cgColor
@@ -108,6 +127,7 @@ class DrawMainGraphic: UIView {
         circleLayer.lineCap = kCALineCapRound
         circleLayer.strokeEnd = 0.0
         self.layer.addSublayer(circleLayer)
+        self.addSubview(trafficInfoLabel)
 
     }
     

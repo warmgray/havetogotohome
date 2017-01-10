@@ -11,6 +11,7 @@ struct circleValue {
     var method:String
     var portion:Double
     var color:String
+    var trafficNum:String
 }
 class loadToHomeParser{
     var datalist = NSDictionary()
@@ -62,15 +63,18 @@ class loadToHomeParser{
         var totalTime:Double = Double((datalist["real_time_interval"]! as AnyObject).description)!
         for var index in 0..<arraySize {
             var color:String?
+            var trafficNum:String?
             var type:String = ((datalist.value(forKey: "steps") as! NSArray)[index] as!NSDictionary).value(forKey: "type") as! String
             if type != "도보" {
                 color = (((datalist.value(forKey: "steps") as! NSArray)[index] as!NSDictionary).value(forKey: "type_details") as!NSDictionary).value(forKey:"color") as! String
+                trafficNum = (((datalist.value(forKey: "steps") as! NSArray)[index] as!NSDictionary).value(forKey: "type_details") as!NSDictionary).value(forKey:"name") as! String
             } else {
                 color = ""
+                trafficNum = ""
             }
-            var portionString:String = ((datalist.value(forKey: "steps") as! NSArray)[index] as!NSDictionary).value(forKey: "interval_percentage") as! String
+            let portionString:String = ((datalist.value(forKey: "steps") as! NSArray)[index] as!NSDictionary).value(forKey: "interval_percentage") as! String
             var portion:Double = Double(portionString)!
-            let cv = circleValue(method:type, portion:portion, color:color!)
+            let cv = circleValue(method:type, portion:portion, color:color!, trafficNum: trafficNum!)
             circleValueArray.append(cv)
         }
         
