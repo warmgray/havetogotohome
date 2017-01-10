@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		4C0016491E1C99470081C5E4 /* DetailPathViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C0016481E1C99470081C5E4 /* DetailPathViewController.swift */; };
+		4C226F841E23AC1D00B148D9 /* Montserrat-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4C226F831E23AC1D00B148D9 /* Montserrat-Regular.ttf */; };
 		4C8FCFAE1DE018F600B5C75B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C8FCFAD1DE018F600B5C75B /* AppDelegate.swift */; };
 		4C8FCFB01DE018F600B5C75B /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C8FCFAF1DE018F600B5C75B /* MainViewController.swift */; };
 		4C8FCFB31DE018F600B5C75B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4C8FCFB11DE018F600B5C75B /* Main.storyboard */; };
@@ -41,6 +42,7 @@
 
 /* Begin PBXFileReference section */
 		4C0016481E1C99470081C5E4 /* DetailPathViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailPathViewController.swift; sourceTree = "<group>"; };
+		4C226F831E23AC1D00B148D9 /* Montserrat-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Regular.ttf"; sourceTree = "<group>"; };
 		4C8FCFAA1DE018F600B5C75B /* Have_to_go_home.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Have_to_go_home.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4C8FCFAD1DE018F600B5C75B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4C8FCFAF1DE018F600B5C75B /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
@@ -89,6 +91,7 @@
 		4C8FCFA11DE018F600B5C75B = {
 			isa = PBXGroup;
 			children = (
+				4C226F831E23AC1D00B148D9 /* Montserrat-Regular.ttf */,
 				4C8FCFAC1DE018F600B5C75B /* Have_to_go_home */,
 				4C8FCFC41DE018F600B5C75B /* Have_to_go_homeTests */,
 				4C8FCFAB1DE018F600B5C75B /* Products */,
@@ -264,6 +267,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4C226F841E23AC1D00B148D9 /* Montserrat-Regular.ttf in Resources */,
 				4C8FCFBB1DE018F600B5C75B /* LaunchScreen.storyboard in Resources */,
 				4C8FCFB81DE018F600B5C75B /* Assets.xcassets in Resources */,
 				4C8FCFB31DE018F600B5C75B /* Main.storyboard in Resources */,
