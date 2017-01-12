@@ -34,10 +34,31 @@ class CardPathViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
+    func scrollToNearestVisibleCollectionViewCell() {
+        let visibleCenterPositionOfScrollView = Float(cardCollectionView.contentOffset.x + (self.cardCollectionView!.bounds.size.width / 2))
+        var closestCellIndex = -1
+        var closestDistance: Float = FLT_MAX
+        for i in 0..<cardCollectionView.visibleCells.count {
+            let cell = cardCollectionView.visibleCells[i]
+            let cellWidth = cell.bounds.size.width
+            let cellCenter = Float(cell.frame.origin.x + cellWidth / 2)
+            
+            // Now calculate closest cell
+            let distance: Float = fabsf(visibleCenterPositionOfScrollView - cellCenter)
+            if distance < closestDistance {
+                closestDistance = distance
+                closestCellIndex = cardCollectionView.indexPath(for: cell)!.row
+            }
+        }
+        if closestCellIndex != -1 {
+            self.cardCollectionView!.scrollToItem(at: IndexPath(row: closestCellIndex, section: 0), at: .centeredHorizontally, animated: true)
+        }
+    }
 
 }
 
-extension CardPathViewController : UICollectionViewDataSource {
+extension CardPathViewController : UICollectionViewDataSource, UIScrollViewDelegate {
     func numberOfSections(in collectionView: UICollectionView) -> Int {
         return 1
     }
@@ -52,6 +73,16 @@ extension CardPathViewController : UICollectionViewDataSource {
         cell.item = self.pathItems[indexPath.item]
         
         return cell
+    }
+    
+    func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
+        scrollToNearestVisibleCollectionViewCell()
+    }
+    
+    func scrollViewDidEndDragging(_ scrollView: UIScrollView, willDecelerate decelerate: Bool) {
+        if !decelerate {
+            scrollToNearestVisibleCollectionViewCell()
+        }
     }
     
 }
