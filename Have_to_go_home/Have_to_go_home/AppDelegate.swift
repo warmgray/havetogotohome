@@ -9,18 +9,22 @@
 import UIKit
 import CoreData
 import CoreLocation
+import GooglePlaces
+import GoogleMaps
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
-
+    
     var window: UIWindow?
     var locationManager: CLLocationManager?
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
+        GMSPlacesClient.provideAPIKey("AIzaSyDDqlIwODxlqOebQ2lMUN-xq9acHQIZxf0")
+        GMSServices.provideAPIKey("AIzaSyDDqlIwODxlqOebQ2lMUN-xq9acHQIZxf0")
         // Override point for customization after application launch.
         
-        UIApplication.shared.setStatusBarStyle(UIStatusBarStyle.lightContent, animated: false)
+        //UIApplication.shared.setStatusBarStyle(UIStatusBarStyle.lightContent, animated: false)
         
         locationManager = CLLocationManager()
         locationManager?.requestAlwaysAuthorization()

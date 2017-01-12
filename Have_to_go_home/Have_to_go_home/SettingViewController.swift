@@ -26,7 +26,7 @@ class SettingViewController: UIViewController, CLLocationManagerDelegate {
     let nsuser = UserDefaults()
     
     @IBAction func setHomeSegue(_ sender: Any) {
-        self.performSegue(withIdentifier: "setHomeSegue", sender: nil)
+        self.performSegue(withIdentifier: "setNewHomeSegue", sender: nil)
     }
     
     @IBAction func setLimitTimeSegue(_ sender: Any) {
@@ -116,10 +116,8 @@ class SettingViewController: UIViewController, CLLocationManagerDelegate {
     func locationManager(_ manager: CLLocationManager,
                          didUpdateLocations locations: [CLLocation])
     {
-        print(33)
         let latestLocation: AnyObject = locations[locations.count - 1 ]
         let latitude = String(format: "%.4f", latestLocation.coordinate.latitude)
-        print(latitude)
         let longtitude = String(format: "%.4f", latestLocation.coordinate.longitude)
         var userLocation:String = latitude + "," + longtitude
         print(userLocation)

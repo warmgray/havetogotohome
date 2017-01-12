@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1F21CF351E260AC7009A9767 /* MapViewController.swift.bak.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F21CF341E260AC7009A9767 /* MapViewController.swift.bak.swift */; };
+		1F21CF371E262EEB009A9767 /* NewMapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F21CF361E262EEB009A9767 /* NewMapViewController.swift */; };
 		4C0016491E1C99470081C5E4 /* DetailPathViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C0016481E1C99470081C5E4 /* DetailPathViewController.swift */; };
 		4C226F841E23AC1D00B148D9 /* Montserrat-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4C226F831E23AC1D00B148D9 /* Montserrat-Regular.ttf */; };
 		4C8900191E24A7F400B91B4A /* Montserrat-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4C8900181E24A7F400B91B4A /* Montserrat-Bold.ttf */; };
@@ -29,6 +31,7 @@
 		4CF7103F1DE1049300520864 /* FailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CF7103E1DE1049300520864 /* FailViewController.swift */; };
 		4CF710411DE116BB00520864 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4CF710401DE116BB00520864 /* MapKit.framework */; };
 		4CF710431DE14D5100520864 /* uicolorExtend.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CF710421DE14D5100520864 /* uicolorExtend.swift */; };
+		BAAFB22B31076143DB0ECFD3 /* libPods-Have_to_go_home.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3FD657293A6C429A686369C3 /* libPods-Have_to_go_home.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -42,6 +45,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1F21CF341E260AC7009A9767 /* MapViewController.swift.bak.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapViewController.swift.bak.swift; sourceTree = "<group>"; };
+		1F21CF361E262EEB009A9767 /* NewMapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewMapViewController.swift; sourceTree = "<group>"; };
+		1F8C404A712EBDDF74D1D584 /* Pods-Have_to_go_home.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Have_to_go_home.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Have_to_go_home/Pods-Have_to_go_home.debug.xcconfig"; sourceTree = "<group>"; };
+		3FD657293A6C429A686369C3 /* libPods-Have_to_go_home.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Have_to_go_home.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		4C0016481E1C99470081C5E4 /* DetailPathViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailPathViewController.swift; sourceTree = "<group>"; };
 		4C226F831E23AC1D00B148D9 /* Montserrat-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Regular.ttf"; sourceTree = "<group>"; };
 		4C8900181E24A7F400B91B4A /* Montserrat-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Bold.ttf"; sourceTree = "<group>"; };
@@ -68,6 +75,7 @@
 		4CF7103E1DE1049300520864 /* FailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FailViewController.swift; sourceTree = "<group>"; };
 		4CF710401DE116BB00520864 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		4CF710421DE14D5100520864 /* uicolorExtend.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = uicolorExtend.swift; sourceTree = "<group>"; };
+		897BA0BAF17A353CEF6705AB /* Pods-Have_to_go_home.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Have_to_go_home.release.xcconfig"; path = "Pods/Target Support Files/Pods-Have_to_go_home/Pods-Have_to_go_home.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,6 +85,7 @@
 			files = (
 				4CF710411DE116BB00520864 /* MapKit.framework in Frameworks */,
 				4CF7103D1DE0D51200520864 /* CoreLocation.framework in Frameworks */,
+				BAAFB22B31076143DB0ECFD3 /* libPods-Have_to_go_home.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -90,6 +99,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0B16229496B5677DF9D3D9B7 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				1F8C404A712EBDDF74D1D584 /* Pods-Have_to_go_home.debug.xcconfig */,
+				897BA0BAF17A353CEF6705AB /* Pods-Have_to_go_home.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		4C8FCFA11DE018F600B5C75B = {
 			isa = PBXGroup;
 			children = (
@@ -99,6 +117,7 @@
 				4C8FCFC41DE018F600B5C75B /* Have_to_go_homeTests */,
 				4C8FCFAB1DE018F600B5C75B /* Products */,
 				4CF7103B1DE0D51200520864 /* Frameworks */,
+				0B16229496B5677DF9D3D9B7 /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -143,10 +162,12 @@
 				4C8FCFAF1DE018F600B5C75B /* MainViewController.swift */,
 				4C8FCFE31DE02EF300B5C75B /* SettingViewController.swift */,
 				4CF7102F1DE08EEA00520864 /* MapViewController.swift */,
+				1F21CF341E260AC7009A9767 /* MapViewController.swift.bak.swift */,
 				4CF710311DE08F0500520864 /* LimitTimeSettingViewController.swift */,
 				4CF710351DE0C6DC00520864 /* MapPathViewController.swift */,
 				4CF7103E1DE1049300520864 /* FailViewController.swift */,
 				4C0016481E1C99470081C5E4 /* DetailPathViewController.swift */,
+				1F21CF361E262EEB009A9767 /* NewMapViewController.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -182,6 +203,7 @@
 			children = (
 				4CF710401DE116BB00520864 /* MapKit.framework */,
 				4CF7103C1DE0D51200520864 /* CoreLocation.framework */,
+				3FD657293A6C429A686369C3 /* libPods-Have_to_go_home.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -193,9 +215,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 4C8FCFCA1DE018F600B5C75B /* Build configuration list for PBXNativeTarget "Have_to_go_home" */;
 			buildPhases = (
+				4430078E3F0F6059AF6D1790 /* [CP] Check Pods Manifest.lock */,
 				4C8FCFA61DE018F600B5C75B /* Sources */,
 				4C8FCFA71DE018F600B5C75B /* Frameworks */,
 				4C8FCFA81DE018F600B5C75B /* Resources */,
+				1EFE8132BF79966CF124A669 /* [CP] Embed Pods Frameworks */,
+				FD25A29B0BFE597206482066 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -287,6 +312,54 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		1EFE8132BF79966CF124A669 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Have_to_go_home/Pods-Have_to_go_home-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		4430078E3F0F6059AF6D1790 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		FD25A29B0BFE597206482066 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Have_to_go_home/Pods-Have_to_go_home-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		4C8FCFA61DE018F600B5C75B /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -300,9 +373,11 @@
 				4C8FCFAE1DE018F600B5C75B /* AppDelegate.swift in Sources */,
 				4C0016491E1C99470081C5E4 /* DetailPathViewController.swift in Sources */,
 				4CCA2EF81E1E3DC600C61464 /* LocationSearchTable.swift in Sources */,
+				1F21CF351E260AC7009A9767 /* MapViewController.swift.bak.swift in Sources */,
 				4C8FCFE41DE02EF300B5C75B /* SettingViewController.swift in Sources */,
 				4CF710431DE14D5100520864 /* uicolorExtend.swift in Sources */,
 				4CF710391DE0CB3D00520864 /* goHomeAlarm.swift in Sources */,
+				1F21CF371E262EEB009A9767 /* NewMapViewController.swift in Sources */,
 				4CF710301DE08EEA00520864 /* MapViewController.swift in Sources */,
 				4C8FCFB61DE018F600B5C75B /* Have_to_go_home.xcdatamodeld in Sources */,
 				4CF7103F1DE1049300520864 /* FailViewController.swift in Sources */,
@@ -440,6 +515,7 @@
 		};
 		4C8FCFCB1DE018F600B5C75B /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1F8C404A712EBDDF74D1D584 /* Pods-Have_to_go_home.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
@@ -456,6 +532,7 @@
 		};
 		4C8FCFCC1DE018F600B5C75B /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 897BA0BAF17A353CEF6705AB /* Pods-Have_to_go_home.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
