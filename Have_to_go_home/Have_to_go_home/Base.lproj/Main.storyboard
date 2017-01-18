@@ -50,17 +50,27 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8bf-xS-Yq1">
+                                <rect key="frame" x="16" y="15" width="343" height="46"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="back"/>
+                                <connections>
+                                    <action selector="backToSetting1" destination="FwR-7Y-Lg2" eventType="touchUpInside" id="8Fm-fs-39p"/>
+                                    <action selector="test" destination="FwR-7Y-Lg2" eventType="touchUpInside" id="g72-iV-T8d"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <connections>
                         <outlet property="addressLabel" destination="hmk-Fp-8ve" id="hds-OR-96f"/>
                         <outlet property="nameLabel" destination="Vtz-bm-8tM" id="PUf-w8-RxA"/>
+                        <segue destination="upL-K2-Vfg" kind="show" identifier="backToSetting1" id="n3t-cs-hIC"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qdT-lz-OlZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1086" y="-305"/>
+            <point key="canvasLocation" x="1085.5999999999999" y="-305.39730134932535"/>
         </scene>
         <!--Setting View Controller-->
         <scene sceneID="b1L-fN-tA7">
@@ -949,7 +959,7 @@
         <image name="speech_bubble1" width="169" height="41"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="oCY-0S-CFQ"/>
-        <segue reference="Mdu-AQ-w0K"/>
+        <segue reference="n3t-cs-hIC"/>
+        <segue reference="hgB-TF-oiH"/>
     </inferredMetricsTieBreakers>
 </document>

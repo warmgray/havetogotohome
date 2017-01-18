@@ -12,10 +12,12 @@ import GooglePlaces
 import GooglePlacePicker
 import GoogleMaps
 
-class NewMapViewController: UIViewController, CLLocationManagerDelegate {
+class NewMapViewController: UIViewController, GMSMapViewDelegate,CLLocationManagerDelegate  {
+    
     var locationManager = CLLocationManager()
     var currentLocation: CLLocation?
     var mapView: GMSMapView!
+    var marker: GMSMarker!
     var placesClient: GMSPlacesClient!
     var zoomLevel: Float = 15.0
     var user_latitude: Double?
@@ -34,37 +36,101 @@ class NewMapViewController: UIViewController, CLLocationManagerDelegate {
         user_longtitude = latestLocation.coordinate.longitude
         if first_location_update {
             let center = CLLocationCoordinate2D(latitude: user_latitude!, longitude: user_longtitude!)
-            let northEast = CLLocationCoordinate2D(latitude: center.latitude + 0.002, longitude: center.longitude + 0.002)
-            let southWest = CLLocationCoordinate2D(latitude: center.latitude - 0.002, longitude: center.longitude - 0.002)
+            let northEast = CLLocationCoordinate2D(latitude: center.latitude + 0.0005, longitude: center.longitude + 0.0005)
+            let southWest = CLLocationCoordinate2D(latitude: center.latitude - 0.0005, longitude: center.longitude - 0.0005)
             let viewport = GMSCoordinateBounds(coordinate: northEast, coordinate: southWest)
             let config = GMSPlacePickerConfig(viewport: viewport)
-            let placePicker = GMSPlacePicker(config: config)
             
-            placePicker.pickPlace(callback: {(place, error) -> Void in
+
+            let camera = GMSCameraPosition.camera(withLatitude: user_latitude!,
+                                                  longitude: user_longtitude!,
+                                                  zoom: zoomLevel)
+            // frame size change
+            let testFrame = CGRect(x: view.bounds.minX, y: view.bounds.minY, width: view.bounds.width, height: 20)
+            print("testFrame")
+            print(testFrame.size)
+            //mapView = GMSMapView.map(withFrame: testFrame, camera: camera)
+            
+            mapView = GMSMapView.map(withFrame: view.bounds, camera: camera)
+            mapView.delegate = self
+            mapView.isMyLocationEnabled = true
+            mapView.settings.myLocationButton = true
+            mapView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
+            view.autoresizesSubviews = false
+            let position = CLLocationCoordinate2DMake(CLLocationDegrees(user_latitude!
+            ), CLLocationDegrees(user_longtitude!))
+            marker = GMSMarker(position: position)
+            
+            placesClient.currentPlace(callback: { (placeLikelihoodList, error) -> Void in
                 if let error = error {
                     print("Pick Place error: \(error.localizedDescription)")
                     return
                 }
-                
-                if let place = place {
-                    self.nameLabel.text = place.name
-                    self.addressLabel.text = place.formattedAddress?.components(separatedBy: ", ")
-                        .joined(separator: "\n")
-                } else {
-                    self.nameLabel.text = "No place selected"
-                    self.addressLabel.text = ""
+                if let placeLikelihoodList = placeLikelihoodList {
+                    self.marker.title = "\(placeLikelihoodList.likelihoods[0].place.name)"
                 }
             })
+            
+            
+            marker.appearAnimation = kGMSMarkerAnimationPop
+            marker.map = mapView
+            self.view = mapView
+            
+            //view.insertSubview(mapView, at: 0)
+            //self.view.addSubview(mapView)
+            //mapView.isHidden = true
             first_location_update = false
         }
+        if let mylocation = mapView.myLocation {
+            print("User's location: \(mylocation)")
+        } else {
+            print("User's location is unknown")
+        }
+    }
+    func mapView(_ mapView: GMSMapView, willMove gesture: Bool) {
+        mapView.clear()
+        print("move move")
+    }
+    func mapView(_ mapView: GMSMapView, idleAt cameraPosition: GMSCameraPosition) {
+        marker.position = mapView.camera.target
+        marker.appearAnimation = kGMSMarkerAnimationPop
+        marker.map = mapView
+    }
+    
+    
+    override func viewDidLoad() {
+        
+        super.viewDidLoad()
+        locationManager = CLLocationManager()
         locationManager.desiredAccuracy = kCLLocationAccuracyBest
-        locationManager.delegate = self
-        locationManager.requestWhenInUseAuthorization()
+        locationManager.requestAlwaysAuthorization()
+        locationManager.distanceFilter = 50
         locationManager.startUpdatingLocation()
-        locationManager.distanceFilter = 1000.0
+        locationManager.delegate = self
+        
+        placesClient = GMSPlacesClient.shared()
+        
+        
+        //var mapInsets = UIEdgeInsetsMake(100.0, 0.0, 0.0, 300.0)
+        //mapView.padding = mapInsets
+        // Add the map to the view, hide it until we've got a location update.
+        
+        
+        
+        
         
     }
     
+    
+    @IBAction func DoneAction(_ sender: Any) {
+        performSegue(withIdentifier: "homeSetDone", sender: nil)
+    }
+    
+    @IBAction func backToSetting1() {
+        performSegue(withIdentifier: "backToSetting1", sender: nil)
+    }
+    
+
     
     @IBAction func getCurrentPlace(_ sender: UIButton) {
         let center = CLLocationCoordinate2D(latitude: user_latitude!, longitude: user_longtitude!)
@@ -90,50 +156,6 @@ class NewMapViewController: UIViewController, CLLocationManagerDelegate {
             }
         })
     }
-    
-    override func viewDidLoad() {
-        
-        super.viewDidLoad()
-        locationManager = CLLocationManager()
-        locationManager.desiredAccuracy = kCLLocationAccuracyBest
-        locationManager.requestAlwaysAuthorization()
-        locationManager.distanceFilter = 50
-        locationManager.startUpdatingLocation()
-        locationManager.delegate = self
-        
-        
-        placesClient = GMSPlacesClient.shared()
-        let camera = GMSCameraPosition.camera(withLatitude: 30.0,
-                                              longitude: 30.0,
-                                              zoom: zoomLevel)
-        
-        let testFrame = CGRect(x: view.bounds.minX, y: view.bounds.minY, width: view.bounds.width, height: 20)
-        print("testFrame")
-        print(testFrame.size)
-
-        mapView = GMSMapView.map(withFrame: testFrame, camera: camera)
-        //mapView = GMSMapView.map(withFrame: view.bounds, camera: camera)
-        mapView.isMyLocationEnabled = true
-        mapView.settings.myLocationButton = true
-        //mapView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
-        view.autoresizesSubviews = false
-        // Add the map to the view, hide it until we've got a location update.
-        view.insertSubview(mapView, at: 0)
-        //view.addSubview(mapView)
-        //mapView.isHidden = true
-        
-        
-    }
-    
-    
-    @IBAction func DoneAction(_ sender: Any) {
-        performSegue(withIdentifier: "homeSetDone", sender: nil)
-    }
-    
-    @IBAction func backToSetting1(_ sender: Any) {
-        performSegue(withIdentifier: "backToSetting1", sender: nil)
-    }
-    
     
     
 }

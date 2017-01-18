@@ -120,7 +120,6 @@ class SettingViewController: UIViewController, CLLocationManagerDelegate {
         let latitude = String(format: "%.4f", latestLocation.coordinate.latitude)
         let longtitude = String(format: "%.4f", latestLocation.coordinate.longitude)
         var userLocation:String = latitude + "," + longtitude
-        print(userLocation)
         userLocation = "37.566932,126.977840"
         nsuser.register(defaults: ["user_location": userLocation])
         nsuser.synchronize()
