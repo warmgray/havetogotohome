@@ -169,7 +169,7 @@
                                 </constraints>
                             </stackView>
                             <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ocq-1e-z9e" userLabel="timeButton">
-                                <rect key="frame" x="112" y="329" width="150" height="30"/>
+                                <rect key="frame" x="112" y="319" width="150" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="Iwm-Wa-8Ec"/>
                                     <constraint firstAttribute="width" constant="150" id="ZYG-T4-qTs"/>
@@ -179,14 +179,13 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="P25-uO-eLE" userLabel="placeButton">
-                                <rect key="frame" x="108" y="209" width="150" height="30"/>
+                                <rect key="frame" x="112" y="239" width="150" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="150" id="19K-BJ-Nui"/>
                                     <constraint firstAttribute="height" constant="30" id="1gl-cV-GCV"/>
                                 </constraints>
                                 <connections>
                                     <action selector="setHomeSegue:" destination="upL-K2-Vfg" eventType="touchUpInside" id="7k7-tg-c5l"/>
-                                    <segue destination="FwR-7Y-Lg2" kind="show" identifier="setNewHomeSegue" id="Bh1-Mm-NtA"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -198,12 +197,12 @@
                             <constraint firstItem="nvP-Df-xQ8" firstAttribute="top" secondItem="81j-nj-diV" secondAttribute="bottom" constant="97" id="Gsm-qb-WMI"/>
                             <constraint firstItem="P2v-ga-Yhf" firstAttribute="top" secondItem="Thx-57-7xO" secondAttribute="top" id="K2X-hx-kE9"/>
                             <constraint firstItem="P25-uO-eLE" firstAttribute="centerX" secondItem="Thx-57-7xO" secondAttribute="centerX" id="Uhm-85-JJi"/>
+                            <constraint firstItem="Ocq-1e-z9e" firstAttribute="centerY" secondItem="PNV-GF-Pw8" secondAttribute="centerY" id="itI-sk-oKg"/>
                             <constraint firstItem="P2v-ga-Yhf" firstAttribute="leading" secondItem="Thx-57-7xO" secondAttribute="leading" id="nx4-bc-3oV"/>
                             <constraint firstItem="dep-5V-bcB" firstAttribute="top" secondItem="Q3L-Zb-fGm" secondAttribute="bottom" constant="17" id="oBx-aE-Dx5"/>
                             <constraint firstItem="Ocq-1e-z9e" firstAttribute="centerX" secondItem="Thx-57-7xO" secondAttribute="centerX" id="one-ia-eve"/>
                             <constraint firstItem="nvP-Df-xQ8" firstAttribute="centerX" secondItem="Thx-57-7xO" secondAttribute="centerX" id="rG2-Hn-N95"/>
                             <constraint firstItem="nvP-Df-xQ8" firstAttribute="top" secondItem="dFf-ae-hUT" secondAttribute="bottom" constant="177" id="shi-vf-boL"/>
-                            <constraint firstItem="nvP-Df-xQ8" firstAttribute="top" secondItem="Ocq-1e-z9e" secondAttribute="bottom" constant="97" id="tHt-Zi-PZn"/>
                             <constraint firstItem="rke-hT-6X9" firstAttribute="top" secondItem="nvP-Df-xQ8" secondAttribute="bottom" constant="140" id="uv8-Sv-KqX"/>
                             <constraint firstAttribute="trailing" secondItem="P2v-ga-Yhf" secondAttribute="trailing" id="w4b-32-Jnz"/>
                             <constraint firstItem="dFf-ae-hUT" firstAttribute="centerY" secondItem="P25-uO-eLE" secondAttribute="centerY" id="xFm-iB-zVn"/>
@@ -221,6 +220,7 @@
                         <segue destination="94T-4H-Duk" kind="show" identifier="setLimitTimeSegue" id="Mxa-OA-k7I"/>
                         <segue destination="UpI-16-7wu" kind="show" identifier="firstGoToMainSegue" id="Vvv-eP-Pva"/>
                         <segue destination="UR5-QG-X9g" kind="show" identifier="GoHomeFailDirect" id="hgB-TF-oiH"/>
+                        <segue destination="RPB-HV-azb" kind="show" identifier="setHomeLocationSegue" id="ltu-3v-zlf"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hWc-Cg-4Zg" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -690,12 +690,6 @@
                                                 <action selector="backToSetting1:" destination="RPB-HV-azb" id="Ukz-06-Fy3"/>
                                             </connections>
                                         </barButtonItem>
-                                        <barButtonItem key="rightBarButtonItem" systemItem="done" id="v1P-As-h5D">
-                                            <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                            <connections>
-                                                <action selector="DoneAction:" destination="RPB-HV-azb" id="23H-xR-XMC"/>
-                                            </connections>
-                                        </barButtonItem>
                                     </navigationItem>
                                 </items>
                             </navigationBar>
@@ -708,48 +702,33 @@
                                     <navigationItem title="Title" id="CVF-OV-GIe"/>
                                 </items>
                             </navigationBar>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wxr-GM-JS1">
-                                <rect key="frame" x="152" y="278" width="43" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="0.99610997509999999" green="1" blue="0.96545831940000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <color key="highlightedColor" red="0.99610997510464916" green="1" blue="0.9654583194043993" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                            </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yu3-RB-UC3">
-                                <rect key="frame" x="147" y="436" width="46" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button"/>
-                                <connections>
-                                    <action selector="getCurrentPlace:" destination="RPB-HV-azb" eventType="touchUpInside" id="QMO-iA-gCq"/>
-                                </connections>
-                            </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="address" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LUd-6a-Puf">
-                                <rect key="frame" x="149" y="349" width="62" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sMi-aI-S7K">
+                                <rect key="frame" x="0.0" y="108" width="375" height="559"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="Owh-Qf-DTb" secondAttribute="trailing" id="0cY-Ik-Njx"/>
                             <constraint firstAttribute="trailing" secondItem="TfR-o9-toE" secondAttribute="trailing" id="6fi-Zc-qbk"/>
+                            <constraint firstItem="9Xm-f3-6fp" firstAttribute="top" secondItem="sMi-aI-S7K" secondAttribute="bottom" id="CHs-ej-2Av"/>
                             <constraint firstItem="Owh-Qf-DTb" firstAttribute="top" secondItem="Rkc-wV-0ZH" secondAttribute="top" id="DoP-NJ-w5p"/>
                             <constraint firstItem="TfR-o9-toE" firstAttribute="leading" secondItem="Rkc-wV-0ZH" secondAttribute="leading" id="EcC-by-jLP"/>
                             <constraint firstItem="me4-gU-Hwe" firstAttribute="top" secondItem="TfR-o9-toE" secondAttribute="top" constant="44" id="HHA-be-7Ri"/>
+                            <constraint firstAttribute="trailing" secondItem="sMi-aI-S7K" secondAttribute="trailing" id="OXE-G7-D6N"/>
                             <constraint firstItem="me4-gU-Hwe" firstAttribute="leading" secondItem="Rkc-wV-0ZH" secondAttribute="leading" id="Oyb-Kx-7zp"/>
                             <constraint firstItem="Owh-Qf-DTb" firstAttribute="leading" secondItem="Rkc-wV-0ZH" secondAttribute="leading" id="TJw-fV-kqS"/>
                             <constraint firstAttribute="trailing" secondItem="me4-gU-Hwe" secondAttribute="trailing" id="UdT-Bb-O0x"/>
+                            <constraint firstItem="sMi-aI-S7K" firstAttribute="leading" secondItem="Rkc-wV-0ZH" secondAttribute="leading" id="gnh-LT-qfc"/>
+                            <constraint firstItem="sMi-aI-S7K" firstAttribute="top" secondItem="me4-gU-Hwe" secondAttribute="bottom" id="hed-o5-EX2"/>
                             <constraint firstItem="9Xm-f3-6fp" firstAttribute="top" secondItem="Owh-Qf-DTb" secondAttribute="bottom" id="qg3-ye-8HA"/>
                             <constraint firstItem="TfR-o9-toE" firstAttribute="top" secondItem="wPI-hQ-Zps" secondAttribute="bottom" id="vHf-p8-fgE"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="dCF-IL-4G7"/>
                     <connections>
-                        <outlet property="addressLabel" destination="LUd-6a-Puf" id="9dI-lW-DF3"/>
+                        <outlet property="GMSView" destination="sMi-aI-S7K" id="xxX-W7-mNx"/>
                         <outlet property="locationSearchBar" destination="me4-gU-Hwe" id="aqd-eh-bqj"/>
-                        <outlet property="nameLabel" destination="wxr-GM-JS1" id="naR-s0-7bW"/>
                         <segue destination="upL-K2-Vfg" kind="show" identifier="homeSetDone" id="9YB-gl-Uqn"/>
                         <segue destination="upL-K2-Vfg" kind="show" identifier="backToSetting1" id="dXN-7y-mEp"/>
                     </connections>
@@ -771,18 +750,18 @@
                                 <rect key="frame" x="0.0" y="25" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="ckr-Pp-daU" id="JGh-gt-AFs">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="5f4-z0-7cL">
-                                            <rect key="frame" x="15" y="5" width="33.5" height="20.5"/>
+                                            <rect key="frame" x="15" y="4" width="34" height="21"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Subtitle" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="E8T-iq-ZNC">
-                                            <rect key="frame" x="15" y="25.5" width="44" height="14.5"/>
+                                            <rect key="frame" x="15" y="25" width="44" height="15"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                             <nil key="textColor"/>
@@ -903,7 +882,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5w-Qb-nR1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3180" y="490.70464767616198"/>
+            <point key="canvasLocation" x="3180" y="489"/>
         </scene>
         <!--Card Path View Controller-->
         <scene sceneID="47Z-kn-Lfi">
@@ -1106,7 +1085,7 @@
         <image name="upper-button" width="18" height="8"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="n3t-cs-hIC"/>
+        <segue reference="dXN-7y-mEp"/>
         <segue reference="hgB-TF-oiH"/>
     </inferredMetricsTieBreakers>
 </document>

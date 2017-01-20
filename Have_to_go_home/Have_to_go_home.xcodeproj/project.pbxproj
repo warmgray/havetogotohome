@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		1F21CF351E260AC7009A9767 /* MapViewController.swift.bak.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F21CF341E260AC7009A9767 /* MapViewController.swift.bak.swift */; };
 		1F21CF371E262EEB009A9767 /* NewMapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F21CF361E262EEB009A9767 /* NewMapViewController.swift */; };
+		491A0CC225E12C748D0A9CD9 /* libPods-Have_to_go_home.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0C6E38B6A5CA727EE4096508 /* libPods-Have_to_go_home.a */; };
 		4C0016491E1C99470081C5E4 /* DetailPathViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C0016481E1C99470081C5E4 /* DetailPathViewController.swift */; };
 		4C226F841E23AC1D00B148D9 /* Montserrat-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4C226F831E23AC1D00B148D9 /* Montserrat-Regular.ttf */; };
 		4C8900191E24A7F400B91B4A /* Montserrat-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4C8900181E24A7F400B91B4A /* Montserrat-Bold.ttf */; };
@@ -34,7 +35,6 @@
 		4CF7103F1DE1049300520864 /* FailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CF7103E1DE1049300520864 /* FailViewController.swift */; };
 		4CF710411DE116BB00520864 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4CF710401DE116BB00520864 /* MapKit.framework */; };
 		4CF710431DE14D5100520864 /* uicolorExtend.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CF710421DE14D5100520864 /* uicolorExtend.swift */; };
-		BAAFB22B31076143DB0ECFD3 /* libPods-Have_to_go_home.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3FD657293A6C429A686369C3 /* libPods-Have_to_go_home.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,10 +48,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0C6E38B6A5CA727EE4096508 /* libPods-Have_to_go_home.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Have_to_go_home.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		1F21CF341E260AC7009A9767 /* MapViewController.swift.bak.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapViewController.swift.bak.swift; sourceTree = "<group>"; };
 		1F21CF361E262EEB009A9767 /* NewMapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewMapViewController.swift; sourceTree = "<group>"; };
 		1F8C404A712EBDDF74D1D584 /* Pods-Have_to_go_home.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Have_to_go_home.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Have_to_go_home/Pods-Have_to_go_home.debug.xcconfig"; sourceTree = "<group>"; };
-		3FD657293A6C429A686369C3 /* libPods-Have_to_go_home.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Have_to_go_home.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		4C0016481E1C99470081C5E4 /* DetailPathViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailPathViewController.swift; sourceTree = "<group>"; };
 		4C226F831E23AC1D00B148D9 /* Montserrat-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Regular.ttf"; sourceTree = "<group>"; };
 		4C8900181E24A7F400B91B4A /* Montserrat-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Bold.ttf"; sourceTree = "<group>"; };
@@ -91,7 +91,7 @@
 			files = (
 				4CF710411DE116BB00520864 /* MapKit.framework in Frameworks */,
 				4CF7103D1DE0D51200520864 /* CoreLocation.framework in Frameworks */,
-				BAAFB22B31076143DB0ECFD3 /* libPods-Have_to_go_home.a in Frameworks */,
+				491A0CC225E12C748D0A9CD9 /* libPods-Have_to_go_home.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -212,7 +212,7 @@
 			children = (
 				4CF710401DE116BB00520864 /* MapKit.framework */,
 				4CF7103C1DE0D51200520864 /* CoreLocation.framework */,
-				3FD657293A6C429A686369C3 /* libPods-Have_to_go_home.a */,
+				0C6E38B6A5CA727EE4096508 /* libPods-Have_to_go_home.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";

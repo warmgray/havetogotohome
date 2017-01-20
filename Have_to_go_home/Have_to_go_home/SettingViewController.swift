@@ -26,7 +26,7 @@ class SettingViewController: UIViewController, CLLocationManagerDelegate {
     let nsuser = UserDefaults()
     
     @IBAction func setHomeSegue(_ sender: Any) {
-        self.performSegue(withIdentifier: "setNewHomeSegue", sender: nil)
+        self.performSegue(withIdentifier: "setHomeLocationSegue", sender: nil)
     }
     
     @IBAction func setLimitTimeSegue(_ sender: Any) {

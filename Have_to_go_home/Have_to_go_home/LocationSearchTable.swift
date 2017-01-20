@@ -8,11 +8,14 @@
 
 import UIKit
 import MapKit
+import GoogleMaps
+import GooglePlaces
 
 class LocationSearchTable : UITableViewController {
 
     var matchingItems:[MKMapItem] = []
     var mapView: MKMapView? = nil
+    var newMapView: GMSMapView? = nil
 
 }
 

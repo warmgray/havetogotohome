@@ -24,7 +24,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         GMSServices.provideAPIKey("AIzaSyDDqlIwODxlqOebQ2lMUN-xq9acHQIZxf0")
         // Override point for customization after application launch.
         
-        //UIApplication.shared.setStatusBarStyle(UIStatusBarStyle.lightContent, animated: false)
+        UIApplication.shared.setStatusBarStyle(UIStatusBarStyle.lightContent, animated: false)
         
         locationManager = CLLocationManager()
         locationManager?.requestAlwaysAuthorization()
