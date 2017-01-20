@@ -12,6 +12,9 @@
 		4C0016491E1C99470081C5E4 /* DetailPathViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C0016481E1C99470081C5E4 /* DetailPathViewController.swift */; };
 		4C226F841E23AC1D00B148D9 /* Montserrat-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4C226F831E23AC1D00B148D9 /* Montserrat-Regular.ttf */; };
 		4C8900191E24A7F400B91B4A /* Montserrat-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4C8900181E24A7F400B91B4A /* Montserrat-Bold.ttf */; };
+		4C89001B1E27577300B91B4A /* CardPathViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C89001A1E27577300B91B4A /* CardPathViewController.swift */; };
+		4C89001D1E275D0000B91B4A /* PathItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C89001C1E275D0000B91B4A /* PathItem.swift */; };
+		4C89001F1E27649200B91B4A /* PathItemViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C89001E1E27649200B91B4A /* PathItemViewCell.swift */; };
 		4C8FCFAE1DE018F600B5C75B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C8FCFAD1DE018F600B5C75B /* AppDelegate.swift */; };
 		4C8FCFB01DE018F600B5C75B /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C8FCFAF1DE018F600B5C75B /* MainViewController.swift */; };
 		4C8FCFB31DE018F600B5C75B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4C8FCFB11DE018F600B5C75B /* Main.storyboard */; };
@@ -52,6 +55,9 @@
 		4C0016481E1C99470081C5E4 /* DetailPathViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailPathViewController.swift; sourceTree = "<group>"; };
 		4C226F831E23AC1D00B148D9 /* Montserrat-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Regular.ttf"; sourceTree = "<group>"; };
 		4C8900181E24A7F400B91B4A /* Montserrat-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Bold.ttf"; sourceTree = "<group>"; };
+		4C89001A1E27577300B91B4A /* CardPathViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardPathViewController.swift; sourceTree = "<group>"; };
+		4C89001C1E275D0000B91B4A /* PathItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PathItem.swift; sourceTree = "<group>"; };
+		4C89001E1E27649200B91B4A /* PathItemViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PathItemViewCell.swift; sourceTree = "<group>"; };
 		4C8FCFAA1DE018F600B5C75B /* Have_to_go_home.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Have_to_go_home.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4C8FCFAD1DE018F600B5C75B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4C8FCFAF1DE018F600B5C75B /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
@@ -160,6 +166,7 @@
 			isa = PBXGroup;
 			children = (
 				4C8FCFAF1DE018F600B5C75B /* MainViewController.swift */,
+				4C89001A1E27577300B91B4A /* CardPathViewController.swift */,
 				4C8FCFE31DE02EF300B5C75B /* SettingViewController.swift */,
 				4CF7102F1DE08EEA00520864 /* MapViewController.swift */,
 				1F21CF341E260AC7009A9767 /* MapViewController.swift.bak.swift */,
@@ -168,6 +175,7 @@
 				4CF7103E1DE1049300520864 /* FailViewController.swift */,
 				4C0016481E1C99470081C5E4 /* DetailPathViewController.swift */,
 				1F21CF361E262EEB009A9767 /* NewMapViewController.swift */,
+				4C89001E1E27649200B91B4A /* PathItemViewCell.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -178,6 +186,7 @@
 				4CF710371DE0CB3D00520864 /* goHomeAlarm.swift */,
 				4CF710381DE0CB3D00520864 /* loadToHomeParser.swift */,
 				4CCA2EF71E1E3DC600C61464 /* LocationSearchTable.swift */,
+				4C89001C1E275D0000B91B4A /* PathItem.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -256,7 +265,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0810;
-				LastUpgradeCheck = 0810;
+				LastUpgradeCheck = 0820;
 				ORGANIZATIONNAME = "유정우";
 				TargetAttributes = {
 					4C8FCFA91DE018F600B5C75B = {
@@ -368,8 +377,10 @@
 				4CF7103A1DE0CB3D00520864 /* loadToHomeParser.swift in Sources */,
 				4CF710361DE0C6DC00520864 /* MapPathViewController.swift in Sources */,
 				4CF710341DE09F0600520864 /* DrawMainGraphic.swift in Sources */,
+				4C89001F1E27649200B91B4A /* PathItemViewCell.swift in Sources */,
 				4CF710321DE08F0500520864 /* LimitTimeSettingViewController.swift in Sources */,
 				4C8FCFB01DE018F600B5C75B /* MainViewController.swift in Sources */,
+				4C89001D1E275D0000B91B4A /* PathItem.swift in Sources */,
 				4C8FCFAE1DE018F600B5C75B /* AppDelegate.swift in Sources */,
 				4C0016491E1C99470081C5E4 /* DetailPathViewController.swift in Sources */,
 				4CCA2EF81E1E3DC600C61464 /* LocationSearchTable.swift in Sources */,
@@ -381,6 +392,7 @@
 				4CF710301DE08EEA00520864 /* MapViewController.swift in Sources */,
 				4C8FCFB61DE018F600B5C75B /* Have_to_go_home.xcdatamodeld in Sources */,
 				4CF7103F1DE1049300520864 /* FailViewController.swift in Sources */,
+				4C89001B1E27577300B91B4A /* CardPathViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -440,6 +452,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_SUSPICIOUS_MOVES = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
@@ -462,7 +475,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -489,6 +502,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_SUSPICIOUS_MOVES = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
@@ -505,7 +519,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";

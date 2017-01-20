@@ -23,7 +23,8 @@ class MainViewController: UIViewController {
     @IBOutlet weak var wayInfoMessage: UILabel!
     @IBOutlet weak var transportationArrivalTime: UILabel!
     
-    @IBOutlet weak var bottomButtonMessage: UIButton!
+    @IBOutlet weak var mainRectangle: UIImageView!
+    @IBOutlet weak var workPathButton: UIButton!
     @IBOutlet weak var baseDotCircle: UIImageView!
     
     @IBOutlet weak var reSetting: UIButton!
@@ -63,7 +64,6 @@ class MainViewController: UIViewController {
         let lastTimeString = dateFormatter.string(from: initTime!)
         timer.text = lastTimeString
         
-        loadBottomButton()
         loadArrivalTimeLabel()
         countDownTimer()
         
@@ -78,14 +78,6 @@ class MainViewController: UIViewController {
         drawPath(circleValueArray: circlePath)
         var _ = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(flickingTwoDots), userInfo: nil, repeats: true)
         var _ = Timer.scheduledTimer(timeInterval: 60.0, target: self, selector: #selector(countDownTimer), userInfo: nil, repeats: true)
-    }
-
-    func loadBottomButton () {
-        let buttonLayer = bottomButtonMessage.layer
-        buttonLayer.borderWidth = 1.0
-        buttonLayer.cornerRadius = 5
-        buttonLayer.masksToBounds = true
-        buttonLayer.borderColor = UIColor(red: 62/255, green: 163/255, blue: 253/255, alpha: 1).cgColor
     }
     
     func loadArrivalTimeLabel () {
@@ -106,7 +98,11 @@ class MainViewController: UIViewController {
             dotShow = true
         }
     }
-
+    
+    func drawBaseLine () {
+        
+    }
+    
     func countDownTimer () {
         let parser = loadToHomeParser(arr:"", usr:"37.523657,126.925234", home:homeLocation!)
 
