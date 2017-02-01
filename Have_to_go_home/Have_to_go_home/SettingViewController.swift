@@ -12,8 +12,8 @@ import CoreLocation
 class SettingViewController: UIViewController, CLLocationManagerDelegate {
 
     @IBOutlet var saveAndStartButton: UIButton!
-    @IBOutlet weak var placeToGo: UILabel!
-    @IBOutlet weak var timeToGo: UILabel!
+    @IBOutlet weak var setHomeLabel: UILabel!
+    @IBOutlet weak var setLimitTimeLabel: UILabel!
     
     var isFirst : Bool = false
     
@@ -24,19 +24,9 @@ class SettingViewController: UIViewController, CLLocationManagerDelegate {
     var limitTime: Date!
     var homeLocation: CLLocation!
     let nsuser = UserDefaults()
-    
-    @IBAction func setHomeSegue(_ sender: Any) {
-        self.performSegue(withIdentifier: "setHomeLocationSegue", sender: nil)
-    }
-    
-    @IBAction func setLimitTimeSegue(_ sender: Any) {
-        self.performSegue(withIdentifier: "setLimitTimeSegue", sender: nil)
-    }
 
     @IBAction func startButtonClick(_ sender: Any) {
-        let clickButton = saveAndStartButton.layer
-        clickButton.backgroundColor = UIColor.white.cgColor
-        saveAndStartButton.setTitleColor(UIColor.black, for: UIControlState.normal)
+        
         var homeLocString:String
         if homeLocation == nil {
             homeLocString = "37.301684,126.856570"
@@ -55,47 +45,19 @@ class SettingViewController: UIViewController, CLLocationManagerDelegate {
         
         nsuser.register(defaults: ["isFirst": false, "limit_time" : limitTimeString, "home_coord" : homeLocString])
         nsuser.synchronize()
+        
+        UIView.animate(withDuration: 0.1, animations: {self.saveAndStartButton.transform = CGAffineTransform(scaleX: 0.8, y: 0.8)}, completion: {(finish: Bool) in UIView.animate(withDuration: 0.2, animations: {self.saveAndStartButton.transform = CGAffineTransform.identity}, completion: {(finish: Bool) in self.performSegue(withIdentifier: "firstGoToMainSegue", sender: nil);})})
 
-        self.performSegue(withIdentifier: "firstGoToMainSegue", sender: nil)
-    }
-    
-    
-    
-    func loadSaveAndStartButton() {
-        let buttonLayer = saveAndStartButton.layer
-        buttonLayer.borderWidth = 1.0
-        buttonLayer.cornerRadius = 21.5
-        buttonLayer.masksToBounds = true
-        buttonLayer.borderColor = UIColor(red: 1, green: 1, blue: 1, alpha: 1).cgColor
-    }
-    
-    func loadInputLabels() {
-        
-        let width = CGFloat(1.0)
-        
-        let timeBorder = CALayer()
-        let placeBorder = CALayer()
-        
-        timeBorder.borderColor = UIColor.white.cgColor
-        timeBorder.frame = CGRect(x: 0, y: timeToGo.frame.size.height - width, width: timeToGo.frame.size.width, height: timeToGo.frame.size.height)
-        placeBorder.borderColor = UIColor.white.cgColor
-        placeBorder.frame = CGRect(x: 0, y: placeToGo.frame.size.height - width, width: placeToGo.frame.size.width, height: placeToGo.frame.size.height)
-        
-        timeBorder.borderWidth = width
-        timeToGo.layer.addSublayer(timeBorder)
-        timeToGo.layer.masksToBounds = true
-        placeBorder.borderWidth = width
-        placeToGo.layer.addSublayer(placeBorder)
-        placeToGo.layer.masksToBounds = true
-        
+        //self.performSegue(withIdentifier: "firstGoToMainSegue", sender: nil)
     }
     
     override func viewDidLoad() {
         
         super.viewDidLoad()
-        self.loadSaveAndStartButton()
-        self.loadInputLabels()
+
         // alarm permission 맨 처음에 해야 될 것들임.
+        addGestureRecognigerWithLabel()
+        
         let app = UIApplication.shared
         let notificationSettings = UIUserNotificationSettings()
         app.registerUserNotificationSettings(notificationSettings)
@@ -131,6 +93,24 @@ class SettingViewController: UIViewController, CLLocationManagerDelegate {
         locationManager.distanceFilter = 1000.0
         startLocation = nil
         
+    }
+    
+    
+    // Label에 Segue 연결하기
+    func addGestureRecognigerWithLabel () {
+        let homeGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(SettingViewController.setHomeSegue))
+        let timeGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(SettingViewController.setLimitTimeSegue))
+        
+        setHomeLabel.addGestureRecognizer(homeGestureRecognizer)
+        setLimitTimeLabel.addGestureRecognizer(timeGestureRecognizer)
+    }
+    
+    func setHomeSegue() {
+        self.performSegue(withIdentifier: "setHomeLocationSegue", sender: nil)
+    }
+    
+    func setLimitTimeSegue() {
+        self.performSegue(withIdentifier: "setLimitTimeSegue", sender: nil)
     }
 
     

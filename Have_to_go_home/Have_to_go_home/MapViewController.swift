@@ -51,7 +51,7 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, GMSMapView
         
         let searchBar = resultSearchController!.searchBar
         searchBar.sizeToFit()
-        searchBar.placeholder = "집 위치 설정"
+        searchBar.placeholder = "장소명으로 검색"
         
         locationSearchTable.tableView.contentInset = UIEdgeInsetsMake(88+UIApplication.shared.statusBarFrame.height, 0, UIApplication.shared.statusBarFrame.height, 0)
         locationSearchBar.topItem?.titleView = resultSearchController?.searchBar
@@ -146,20 +146,6 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, GMSMapView
             print("User's location: \(mylocation)")
         } else {
             print("User's location is unknown")
-        }
-        
-    }
-    
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if(segue.identifier == "homeSetDone") {
-            let location:CLLocation = CLLocation(latitude: testlatitude, longitude: testlongitude)
-            let locationString:String = String(describing: location)
-            (segue.destination as! SettingViewController).homeLocation = location
-            (segue.destination as! SettingViewController).placeToGo.text = locationString
-            
-            
-        } else if(segue.identifier == "back") {
-            
         }
         
     }
