@@ -32,7 +32,7 @@ class SettingViewController: UIViewController, CLLocationManagerDelegate {
     
     @IBAction func textFieldEditing(_ sender: UITextField) {
         
-        let datePickerView:UIDatePicker = UIDatePicker(frame: CGRect(x: 0.0, y: 0.0, width: self.view.frame.width, height: 160))
+        let datePickerView:UIDatePicker = UIDatePicker(frame: CGRect(x: 0.0, y: 0.0, width: self.view.frame.width, height: dateTextField.layer.frame.minY - 120))
         datePickerView.datePickerMode = UIDatePickerMode.time
         datePickerView.minuteInterval = 10
         

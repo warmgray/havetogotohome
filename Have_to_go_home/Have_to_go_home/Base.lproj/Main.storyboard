@@ -168,8 +168,8 @@
                                     <constraint firstAttribute="width" secondItem="lha-IO-14d" secondAttribute="height" multiplier="1:1" id="yyb-Py-oHY"/>
                                 </constraints>
                             </imageView>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="통금 시간 없음" placeholder="통금 시간 없음" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="I9n-LY-iqY" customClass="NonEditTextField" customModule="Have_to_go_home" customModuleProvider="target">
-                                <rect key="frame" x="46" y="333" width="248" height="50"/>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="통금 시간 없음" placeholder="통금 시간 없음" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="I9n-LY-iqY" customClass="NonEditTextField" customModule="Have_to_go_home" customModuleProvider="target">
+                                <rect key="frame" x="49" y="333" width="245" height="50"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="vg7-eU-Q4f"/>
                                 </constraints>
@@ -198,7 +198,7 @@
                             <constraint firstItem="yvV-eV-NBL" firstAttribute="top" secondItem="zjQ-Zj-r9f" secondAttribute="bottom" constant="8" id="duv-Dr-2HK"/>
                             <constraint firstItem="yvV-eV-NBL" firstAttribute="top" secondItem="Thx-57-7xO" secondAttribute="centerY" id="e1y-uH-JQy"/>
                             <constraint firstItem="FM6-tq-GFq" firstAttribute="trailing" secondItem="9ug-iB-D8d" secondAttribute="trailing" constant="-15" id="hq3-CD-G8j"/>
-                            <constraint firstItem="yvV-eV-NBL" firstAttribute="leading" secondItem="I9n-LY-iqY" secondAttribute="leading" constant="-15" id="i5p-H6-HEe"/>
+                            <constraint firstItem="yvV-eV-NBL" firstAttribute="leading" secondItem="I9n-LY-iqY" secondAttribute="leading" constant="-18" id="i5p-H6-HEe"/>
                             <constraint firstItem="FM6-tq-GFq" firstAttribute="centerY" secondItem="9ug-iB-D8d" secondAttribute="centerY" id="jDL-dq-Hyf"/>
                             <constraint firstItem="P2v-ga-Yhf" firstAttribute="leading" secondItem="Thx-57-7xO" secondAttribute="leading" id="nx4-bc-3oV"/>
                             <constraint firstItem="yvV-eV-NBL" firstAttribute="leading" secondItem="Thx-57-7xO" secondAttribute="leadingMargin" constant="15" id="ofO-Au-Azp"/>
