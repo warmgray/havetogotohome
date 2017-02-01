@@ -90,7 +90,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nvP-Df-xQ8">
-                                <rect key="frame" x="133" y="438" width="110" height="110"/>
+                                <rect key="frame" x="132.5" y="438" width="110" height="110"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="nvP-Df-xQ8" secondAttribute="height" multiplier="1:1" id="kn9-Tw-bAw"/>
                                 </constraints>
@@ -153,15 +153,7 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="vKW-KC-JNM"/>
                                 </constraints>
-                                <attributedString key="attributedText">
-                                    <fragment content="통금 시간을 설정하세요">
-                                        <attributes>
-                                            <color key="NSColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                            <font key="NSFont" size="16" name="AppleSDGothicNeo-Regular"/>
-                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" firstLineHeadIndent="20" tighteningFactorForTruncation="0.0"/>
-                                        </attributes>
-                                    </fragment>
-                                </attributedString>
+                                <attributedString key="attributedText"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="placeholder-5" translatesAutoresizingMaskIntoConstraints="NO" id="FM6-tq-GFq">
@@ -176,9 +168,21 @@
                                     <constraint firstAttribute="width" secondItem="lha-IO-14d" secondAttribute="height" multiplier="1:1" id="yyb-Py-oHY"/>
                                 </constraints>
                             </imageView>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="통금 시간 없음" placeholder="통금 시간 없음" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="I9n-LY-iqY" customClass="NonEditTextField" customModule="Have_to_go_home" customModuleProvider="target">
+                                <rect key="frame" x="46" y="333" width="248" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="vg7-eU-Q4f"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="16"/>
+                                <textInputTraits key="textInputTraits" spellCheckingType="no"/>
+                                <connections>
+                                    <action selector="textFieldEditing:" destination="upL-K2-Vfg" eventType="editingDidBegin" id="47c-2I-63x"/>
+                                </connections>
+                            </textField>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="I9n-LY-iqY" firstAttribute="centerY" secondItem="yvV-eV-NBL" secondAttribute="centerY" id="77D-0e-Mkb"/>
                             <constraint firstAttribute="trailingMargin" secondItem="yvV-eV-NBL" secondAttribute="trailing" constant="15" id="EO8-yD-aLE"/>
                             <constraint firstItem="p2n-cY-SfG" firstAttribute="centerX" secondItem="Thx-57-7xO" secondAttribute="centerX" id="EeP-VG-wdy"/>
                             <constraint firstItem="lha-IO-14d" firstAttribute="centerY" secondItem="yvV-eV-NBL" secondAttribute="centerY" id="F5d-Rg-Xuj"/>
@@ -194,11 +198,13 @@
                             <constraint firstItem="yvV-eV-NBL" firstAttribute="top" secondItem="zjQ-Zj-r9f" secondAttribute="bottom" constant="8" id="duv-Dr-2HK"/>
                             <constraint firstItem="yvV-eV-NBL" firstAttribute="top" secondItem="Thx-57-7xO" secondAttribute="centerY" id="e1y-uH-JQy"/>
                             <constraint firstItem="FM6-tq-GFq" firstAttribute="trailing" secondItem="9ug-iB-D8d" secondAttribute="trailing" constant="-15" id="hq3-CD-G8j"/>
+                            <constraint firstItem="yvV-eV-NBL" firstAttribute="leading" secondItem="I9n-LY-iqY" secondAttribute="leading" constant="-15" id="i5p-H6-HEe"/>
                             <constraint firstItem="FM6-tq-GFq" firstAttribute="centerY" secondItem="9ug-iB-D8d" secondAttribute="centerY" id="jDL-dq-Hyf"/>
                             <constraint firstItem="P2v-ga-Yhf" firstAttribute="leading" secondItem="Thx-57-7xO" secondAttribute="leading" id="nx4-bc-3oV"/>
                             <constraint firstItem="yvV-eV-NBL" firstAttribute="leading" secondItem="Thx-57-7xO" secondAttribute="leadingMargin" constant="15" id="ofO-Au-Azp"/>
                             <constraint firstItem="lha-IO-14d" firstAttribute="top" secondItem="yvV-eV-NBL" secondAttribute="top" constant="13" id="q3h-oK-YeG"/>
                             <constraint firstItem="nvP-Df-xQ8" firstAttribute="centerX" secondItem="Thx-57-7xO" secondAttribute="centerX" id="rG2-Hn-N95"/>
+                            <constraint firstItem="lha-IO-14d" firstAttribute="leading" secondItem="I9n-LY-iqY" secondAttribute="trailing" constant="12.5" id="rXp-S3-jCi"/>
                             <constraint firstAttribute="trailing" secondItem="P2v-ga-Yhf" secondAttribute="trailing" id="w4b-32-Jnz"/>
                             <constraint firstItem="p2n-cY-SfG" firstAttribute="top" secondItem="Q3L-Zb-fGm" secondAttribute="bottom" constant="17" id="xml-Jh-MKu"/>
                             <constraint firstItem="rke-hT-6X9" firstAttribute="top" secondItem="P2v-ga-Yhf" secondAttribute="bottom" id="z0M-ql-0hW"/>
@@ -208,10 +214,10 @@
                     <navigationItem key="navigationItem" id="7LE-FI-5pv"/>
                     <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="lightContent"/>
                     <connections>
+                        <outlet property="dateTextField" destination="I9n-LY-iqY" id="7VR-66-qH6"/>
                         <outlet property="saveAndStartButton" destination="nvP-Df-xQ8" id="ZOE-HU-484"/>
                         <outlet property="setHomeLabel" destination="9ug-iB-D8d" id="YiD-Ln-2PU"/>
                         <outlet property="setLimitTimeLabel" destination="yvV-eV-NBL" id="vi0-ah-J8e"/>
-                        <segue destination="94T-4H-Duk" kind="show" identifier="setLimitTimeSegue" id="Mxa-OA-k7I"/>
                         <segue destination="UpI-16-7wu" kind="show" identifier="firstGoToMainSegue" id="Vvv-eP-Pva"/>
                         <segue destination="UR5-QG-X9g" kind="show" identifier="GoHomeFailDirect" id="hgB-TF-oiH"/>
                         <segue destination="RPB-HV-azb" kind="show" identifier="setHomeLocationSegue" id="ltu-3v-zlf"/>
@@ -677,11 +683,12 @@
                                 </textAttributes>
                                 <items>
                                     <navigationItem title="집 위치 설정" id="TR0-jx-Whh">
-                                        <barButtonItem key="leftBarButtonItem" image="left-arrow" id="ksE-Rd-AeG">
+                                        <barButtonItem key="rightBarButtonItem" title="닫기" id="ksE-Rd-AeG">
                                             <inset key="imageInsets" minX="6" minY="9" maxX="6" maxY="9"/>
                                             <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                             <connections>
                                                 <action selector="backToSetting1:" destination="RPB-HV-azb" id="Ukz-06-Fy3"/>
+                                                <segue destination="qb9-1a-kMj" kind="unwind" unwindAction="backToSettingWithSender:" id="0Z6-BZ-g0E"/>
                                             </connections>
                                         </barButtonItem>
                                     </navigationItem>
@@ -723,13 +730,13 @@
                     <connections>
                         <outlet property="GMSView" destination="sMi-aI-S7K" id="xxX-W7-mNx"/>
                         <outlet property="locationSearchBar" destination="me4-gU-Hwe" id="aqd-eh-bqj"/>
-                        <segue destination="upL-K2-Vfg" kind="show" identifier="homeSetDone" id="9YB-gl-Uqn"/>
-                        <segue destination="upL-K2-Vfg" kind="show" identifier="backToSetting1" id="dXN-7y-mEp"/>
+                        <segue destination="upL-K2-Vfg" kind="showDetail" identifier="homeSetDone" id="9YB-gl-Uqn"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xFV-fz-mVS" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="qb9-1a-kMj" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="3180" y="-278.41079460269867"/>
+            <point key="canvasLocation" x="2926" y="124"/>
         </scene>
         <!--Location Search Table-->
         <scene sceneID="klD-b3-bIN">
@@ -774,109 +781,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fN0-GR-Tbx" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3889" y="-278"/>
-        </scene>
-        <!--Limit Time Setting View Controller-->
-        <scene sceneID="370-Ja-HNl">
-            <objects>
-                <viewController id="94T-4H-Duk" customClass="LimitTimeSettingViewController" customModule="Have_to_go_home" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="qRq-Oj-Rme"/>
-                        <viewControllerLayoutGuide type="bottom" id="aS9-DQ-tcg"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="9Y8-Fn-4rk">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Background 640'" translatesAutoresizingMaskIntoConstraints="NO" id="itE-bm-CEd">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                            </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GhG-Lw-gT2">
-                                <rect key="frame" x="53" y="416" width="268" height="44"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="268" id="2YP-Or-cIj"/>
-                                    <constraint firstAttribute="height" constant="44" id="ZCo-X4-yq9"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" name="AppleSDGothicNeo-Light" family="Apple SD Gothic Neo" pointSize="13"/>
-                                <state key="normal" title=" 통금시간 설정"/>
-                                <connections>
-                                    <action selector="setAndSaveTime:" destination="94T-4H-Duk" eventType="touchUpInside" id="OUc-fw-a6B"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MxU-Yn-u25">
-                                <rect key="frame" x="53" y="477" width="268" height="44"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="268" id="SUe-t1-d8L"/>
-                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="44" id="Yav-Dr-pyJ"/>
-                                    <constraint firstAttribute="height" constant="44" id="eCy-zi-RQp"/>
-                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="268" id="glK-1X-UmI"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" name="AppleSDGothicNeo-Light" family="Apple SD Gothic Neo" pointSize="13"/>
-                                <state key="normal" title="통금시간 없음 ^^">
-                                    <color key="titleColor" red="0.96470588235294119" green="0.47450980392156861" blue="0.46666666666666667" alpha="1" colorSpace="calibratedRGB"/>
-                                </state>
-                                <connections>
-                                    <action selector="noLimitTime:" destination="94T-4H-Duk" eventType="touchUpInside" id="xrd-QI-BLx"/>
-                                </connections>
-                            </button>
-                            <datePicker contentMode="scaleToFill" highlighted="YES" selected="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="time" minuteInterval="10" useCurrentDate="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bRr-p3-Kwx">
-                                <rect key="frame" x="0.0" y="170" width="375" height="216"/>
-                                <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                <date key="date" timeIntervalSinceReferenceDate="501292547.119187">
-                                    <!--2016-11-19 23:55:47 +0000-->
-                                </date>
-                            </datePicker>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="언제까지 들어갈까요?" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6F9-DP-sJr">
-                                <rect key="frame" x="87" y="121" width="200" height="25"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="200" id="H5y-fU-HXE"/>
-                                    <constraint firstAttribute="height" constant="25" id="YiV-RP-wtW"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" name="AppleSDGothicNeo-Bold" family="Apple SD Gothic Neo" pointSize="20"/>
-                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="u6v-zm-8gp">
-                                <rect key="frame" x="16" y="20" width="40" height="40"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="40" id="ced-tq-6gX"/>
-                                    <constraint firstAttribute="width" constant="40" id="gG9-2W-Ugi"/>
-                                </constraints>
-                                <inset key="imageEdgeInsets" minX="10" minY="10" maxX="10" maxY="10"/>
-                                <state key="normal" image="left-arrow"/>
-                                <connections>
-                                    <action selector="goBackButton:" destination="94T-4H-Duk" eventType="touchUpInside" id="UJL-wV-sxU"/>
-                                </connections>
-                            </button>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstItem="aS9-DQ-tcg" firstAttribute="top" secondItem="itE-bm-CEd" secondAttribute="bottom" id="7Qj-O9-s7Y"/>
-                            <constraint firstItem="bRr-p3-Kwx" firstAttribute="top" secondItem="qRq-Oj-Rme" secondAttribute="bottom" constant="150" id="8sT-UN-8TB"/>
-                            <constraint firstItem="itE-bm-CEd" firstAttribute="top" secondItem="9Y8-Fn-4rk" secondAttribute="top" id="ABU-bv-kh5"/>
-                            <constraint firstAttribute="trailing" secondItem="itE-bm-CEd" secondAttribute="trailing" id="Bjq-1w-fjm"/>
-                            <constraint firstItem="itE-bm-CEd" firstAttribute="leading" secondItem="9Y8-Fn-4rk" secondAttribute="leading" id="NUA-h9-DcZ"/>
-                            <constraint firstItem="6F9-DP-sJr" firstAttribute="top" secondItem="qRq-Oj-Rme" secondAttribute="bottom" constant="101" id="Q24-Fo-UJn"/>
-                            <constraint firstItem="u6v-zm-8gp" firstAttribute="leading" secondItem="9Y8-Fn-4rk" secondAttribute="leadingMargin" id="QBa-E1-uYa"/>
-                            <constraint firstItem="MxU-Yn-u25" firstAttribute="top" secondItem="GhG-Lw-gT2" secondAttribute="bottom" constant="17" id="QWF-a6-kWB"/>
-                            <constraint firstItem="GhG-Lw-gT2" firstAttribute="centerX" secondItem="9Y8-Fn-4rk" secondAttribute="centerX" id="Qi8-UX-2mN"/>
-                            <constraint firstAttribute="trailing" secondItem="bRr-p3-Kwx" secondAttribute="trailing" id="Vd1-B6-tPZ"/>
-                            <constraint firstItem="MxU-Yn-u25" firstAttribute="centerX" secondItem="9Y8-Fn-4rk" secondAttribute="centerX" id="ZFH-Ia-QXa"/>
-                            <constraint firstItem="6F9-DP-sJr" firstAttribute="centerX" secondItem="9Y8-Fn-4rk" secondAttribute="centerX" id="hF3-t4-iRD"/>
-                            <constraint firstItem="u6v-zm-8gp" firstAttribute="top" secondItem="qRq-Oj-Rme" secondAttribute="bottom" id="hzv-hk-MuH"/>
-                            <constraint firstItem="bRr-p3-Kwx" firstAttribute="leading" secondItem="9Y8-Fn-4rk" secondAttribute="leading" id="kJ2-c5-xsU"/>
-                            <constraint firstItem="GhG-Lw-gT2" firstAttribute="top" secondItem="bRr-p3-Kwx" secondAttribute="bottom" constant="30" id="uTq-eK-Q8f"/>
-                        </constraints>
-                    </view>
-                    <connections>
-                        <outlet property="noLimitTime" destination="MxU-Yn-u25" id="sho-Zg-WR5"/>
-                        <outlet property="setLimitTime" destination="GhG-Lw-gT2" id="exU-Ay-alQ"/>
-                        <outlet property="timePicker" destination="bRr-p3-Kwx" id="cMs-4b-bU9"/>
-                        <segue destination="upL-K2-Vfg" kind="show" identifier="goToSetting2" id="3Tz-T5-BMZ"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="x5w-Qb-nR1" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="3180" y="489"/>
         </scene>
         <!--Card Path View Controller-->
         <scene sceneID="47Z-kn-Lfi">
@@ -1068,7 +972,6 @@
         <image name="card-rectangle" width="332" height="413"/>
         <image name="clock" width="24" height="24"/>
         <image name="default_circle" width="252" height="282"/>
-        <image name="left-arrow" width="34" height="34"/>
         <image name="main_rectangle" width="375" height="239"/>
         <image name="next_button" width="110" height="110"/>
         <image name="placeholder-5" width="20" height="24"/>
@@ -1081,6 +984,6 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="hgB-TF-oiH"/>
-        <segue reference="oCY-0S-CFQ"/>
+        <segue reference="9YB-gl-Uqn"/>
     </inferredMetricsTieBreakers>
 </document>

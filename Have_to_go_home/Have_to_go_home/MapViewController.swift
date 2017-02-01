@@ -15,7 +15,7 @@ import GooglePlacePicker
 class MapViewController: UIViewController, CLLocationManagerDelegate, GMSMapViewDelegate, UISearchControllerDelegate {
     
     @IBAction func backToSetting1(_ sender: Any) {
-        performSegue(withIdentifier: "backToSetting1", sender: nil)
+        
     }
     
     @IBOutlet weak var locationSearchBar: UINavigationBar!

@@ -12,6 +12,7 @@
 		491A0CC225E12C748D0A9CD9 /* libPods-Have_to_go_home.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0C6E38B6A5CA727EE4096508 /* libPods-Have_to_go_home.a */; };
 		4C0016491E1C99470081C5E4 /* DetailPathViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C0016481E1C99470081C5E4 /* DetailPathViewController.swift */; };
 		4C226F841E23AC1D00B148D9 /* Montserrat-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4C226F831E23AC1D00B148D9 /* Montserrat-Regular.ttf */; };
+		4C28A0051E421DCD00D1481C /* NonEditTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C28A0041E421DCD00D1481C /* NonEditTextField.swift */; };
 		4C8900191E24A7F400B91B4A /* Montserrat-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4C8900181E24A7F400B91B4A /* Montserrat-Bold.ttf */; };
 		4C89001B1E27577300B91B4A /* CardPathViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C89001A1E27577300B91B4A /* CardPathViewController.swift */; };
 		4C89001D1E275D0000B91B4A /* PathItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C89001C1E275D0000B91B4A /* PathItem.swift */; };
@@ -26,7 +27,6 @@
 		4C8FCFE41DE02EF300B5C75B /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C8FCFE31DE02EF300B5C75B /* SettingViewController.swift */; };
 		4CCA2EF81E1E3DC600C61464 /* LocationSearchTable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CCA2EF71E1E3DC600C61464 /* LocationSearchTable.swift */; };
 		4CF710301DE08EEA00520864 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CF7102F1DE08EEA00520864 /* MapViewController.swift */; };
-		4CF710321DE08F0500520864 /* LimitTimeSettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CF710311DE08F0500520864 /* LimitTimeSettingViewController.swift */; };
 		4CF710341DE09F0600520864 /* DrawMainGraphic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CF710331DE09F0600520864 /* DrawMainGraphic.swift */; };
 		4CF710361DE0C6DC00520864 /* MapPathViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CF710351DE0C6DC00520864 /* MapPathViewController.swift */; };
 		4CF710391DE0CB3D00520864 /* goHomeAlarm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CF710371DE0CB3D00520864 /* goHomeAlarm.swift */; };
@@ -54,6 +54,7 @@
 		1F8C404A712EBDDF74D1D584 /* Pods-Have_to_go_home.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Have_to_go_home.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Have_to_go_home/Pods-Have_to_go_home.debug.xcconfig"; sourceTree = "<group>"; };
 		4C0016481E1C99470081C5E4 /* DetailPathViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailPathViewController.swift; sourceTree = "<group>"; };
 		4C226F831E23AC1D00B148D9 /* Montserrat-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Regular.ttf"; sourceTree = "<group>"; };
+		4C28A0041E421DCD00D1481C /* NonEditTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NonEditTextField.swift; sourceTree = "<group>"; };
 		4C8900181E24A7F400B91B4A /* Montserrat-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Bold.ttf"; sourceTree = "<group>"; };
 		4C89001A1E27577300B91B4A /* CardPathViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardPathViewController.swift; sourceTree = "<group>"; };
 		4C89001C1E275D0000B91B4A /* PathItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PathItem.swift; sourceTree = "<group>"; };
@@ -72,7 +73,6 @@
 		4C8FCFE31DE02EF300B5C75B /* SettingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingViewController.swift; sourceTree = "<group>"; };
 		4CCA2EF71E1E3DC600C61464 /* LocationSearchTable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationSearchTable.swift; sourceTree = "<group>"; };
 		4CF7102F1DE08EEA00520864 /* MapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
-		4CF710311DE08F0500520864 /* LimitTimeSettingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LimitTimeSettingViewController.swift; sourceTree = "<group>"; };
 		4CF710331DE09F0600520864 /* DrawMainGraphic.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DrawMainGraphic.swift; sourceTree = "<group>"; };
 		4CF710351DE0C6DC00520864 /* MapPathViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapPathViewController.swift; sourceTree = "<group>"; };
 		4CF710371DE0CB3D00520864 /* goHomeAlarm.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = goHomeAlarm.swift; sourceTree = "<group>"; };
@@ -149,6 +149,7 @@
 				4C8FCFB91DE018F600B5C75B /* LaunchScreen.storyboard */,
 				4C8FCFBC1DE018F600B5C75B /* Info.plist */,
 				4C8FCFB41DE018F600B5C75B /* Have_to_go_home.xcdatamodeld */,
+				4C28A0041E421DCD00D1481C /* NonEditTextField.swift */,
 			);
 			path = Have_to_go_home;
 			sourceTree = "<group>";
@@ -170,7 +171,6 @@
 				4C8FCFE31DE02EF300B5C75B /* SettingViewController.swift */,
 				4CF7102F1DE08EEA00520864 /* MapViewController.swift */,
 				1F21CF341E260AC7009A9767 /* MapViewController.swift.bak.swift */,
-				4CF710311DE08F0500520864 /* LimitTimeSettingViewController.swift */,
 				4CF710351DE0C6DC00520864 /* MapPathViewController.swift */,
 				4CF7103E1DE1049300520864 /* FailViewController.swift */,
 				4C0016481E1C99470081C5E4 /* DetailPathViewController.swift */,
@@ -378,9 +378,9 @@
 				4CF710361DE0C6DC00520864 /* MapPathViewController.swift in Sources */,
 				4CF710341DE09F0600520864 /* DrawMainGraphic.swift in Sources */,
 				4C89001F1E27649200B91B4A /* PathItemViewCell.swift in Sources */,
-				4CF710321DE08F0500520864 /* LimitTimeSettingViewController.swift in Sources */,
 				4C8FCFB01DE018F600B5C75B /* MainViewController.swift in Sources */,
 				4C89001D1E275D0000B91B4A /* PathItem.swift in Sources */,
+				4C28A0051E421DCD00D1481C /* NonEditTextField.swift in Sources */,
 				4C8FCFAE1DE018F600B5C75B /* AppDelegate.swift in Sources */,
 				4C0016491E1C99470081C5E4 /* DetailPathViewController.swift in Sources */,
 				4CCA2EF81E1E3DC600C61464 /* LocationSearchTable.swift in Sources */,
