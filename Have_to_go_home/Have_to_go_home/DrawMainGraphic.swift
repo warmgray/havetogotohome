@@ -87,9 +87,9 @@ class DrawMainGraphic: UIView {
 //        
 //    } // func
     
-    func makeCircleCALayer() {
-        let center: CGPoint = CGPoint(x: self.frame.width/2, y: 225	)
-        let radius: CGFloat = 106
+    func makeCircleCALayer(dotCircleCenter:CGPoint, radius:CGFloat) {
+        let center: CGPoint = dotCircleCenter
+        let radius: CGFloat = radius
         let trafficInfoCenter: CGPoint!
         
         if ( 1 > self.trackWidth) {

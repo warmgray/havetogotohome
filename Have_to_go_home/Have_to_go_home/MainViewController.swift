@@ -11,7 +11,6 @@ import UIKit
 class MainViewController: UIViewController {
     
 
-    @IBOutlet var mainMessage: UILabel!
     @IBOutlet var timer: UILabel!
     @IBOutlet weak var timeLimitMessage: UILabel!
     @IBOutlet weak var twoPoint: UILabel!
@@ -29,12 +28,17 @@ class MainViewController: UIViewController {
     
     @IBOutlet weak var reSetting: UIButton!
     
+    //constraints
+    @IBOutlet weak var speechBubbleConstraint: NSLayoutConstraint!
+    @IBOutlet weak var pathButtonWidth: NSLayoutConstraint!
+    
     var circleCenter:CGPoint!
     var homeLocation:String?
     var limitTime:String?
     var userLocation:String?
     var lastTime:String?
     var leftTime:Date?
+    
     
     var dotShow:Bool = true
     
@@ -63,6 +67,8 @@ class MainViewController: UIViewController {
         dateFormatter.dateFormat = "HH   mm"
         let lastTimeString = dateFormatter.string(from: initTime!)
         timer.text = lastTimeString
+        
+        setConstraints()
         
         loadArrivalTimeLabel()
         countDownTimer()
@@ -124,13 +130,16 @@ class MainViewController: UIViewController {
         let circleProgress: DrawMainGraphic = DrawMainGraphic(frame: self.view.bounds)
         let startCgFloat = CGFloat(start)
         let perCgFloat = CGFloat(percentage)
-        circleProgress.trackWidth = 6
+        let radius = CGFloat(self.baseDotCircle.layer.frame.width/2+2)
+        let centerPoint = CGPoint(x: self.baseDotCircle.layer.frame.midX, y: self.baseDotCircle.layer.frame.midY + radius*5/44)
+        
+        circleProgress.trackWidth = radius/20
         circleProgress.color = color.hexColor
         circleProgress.startPoint = startCgFloat
         circleProgress.fillPercentage = perCgFloat
         circleProgress.trafficInfo = trafficInfo
         self.view.insertSubview(circleProgress, aboveSubview: baseDotCircle)
-        circleProgress.makeCircleCALayer()
+        circleProgress.makeCircleCALayer(dotCircleCenter: centerPoint,radius: radius)
         circleProgress.animateCircle(duration: 0.7)
     }
     
@@ -146,6 +155,23 @@ class MainViewController: UIViewController {
             currentPoint += Float(circleValue.portion)
             
         }
+    }
+    
+    func setConstraints () {
+        speechBubbleConstraint.constant = CGFloat(self.baseDotCircle.layer.frame.width/7)
+        
+        
+        
+        timer.adjustsFontSizeToFitWidth = true
+        timer.minimumScaleFactor = 0.6
+        timeLimitMessage.adjustsFontSizeToFitWidth = true
+        timeLimitMessage.minimumScaleFactor = 0.6
+        
+        twoPoint.adjustsFontSizeToFitWidth = true
+        twoPoint.minimumScaleFactor = 0.6
+        
+        pathButtonWidth.constant = self.view.frame.width*3/7
+        
     }
     
     func getColorOfPath (transportNum: Int) -> UIColor {
