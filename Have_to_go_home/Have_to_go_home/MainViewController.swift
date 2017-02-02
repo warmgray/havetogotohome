@@ -15,22 +15,26 @@ class MainViewController: UIViewController {
     @IBOutlet weak var timeLimitMessage: UILabel!
     @IBOutlet weak var twoPoint: UILabel!
     
-    @IBOutlet weak var missionHeader: UILabel!
-    @IBOutlet weak var transportation: UILabel!
-    @IBOutlet weak var missionTail: UILabel!
-    
     @IBOutlet weak var wayInfoMessage: UILabel!
     @IBOutlet weak var transportationArrivalTime: UILabel!
     
-    @IBOutlet weak var mainRectangle: UIImageView!
     @IBOutlet weak var workPathButton: UIButton!
     @IBOutlet weak var baseDotCircle: UIImageView!
     
     @IBOutlet weak var reSetting: UIButton!
+    @IBOutlet weak var missionName: UILabel!
+    @IBOutlet weak var missionDetailView: UIView!
     
     //constraints
     @IBOutlet weak var speechBubbleConstraint: NSLayoutConstraint!
     @IBOutlet weak var pathButtonWidth: NSLayoutConstraint!
+    @IBOutlet weak var timerCenterHeight: NSLayoutConstraint!
+    @IBOutlet weak var missionNameWidth: NSLayoutConstraint!
+    @IBOutlet weak var missionNameTopSpace: NSLayoutConstraint!
+    @IBOutlet weak var arrowWidth: NSLayoutConstraint!
+    @IBOutlet weak var topButtonWidth: NSLayoutConstraint!
+    @IBOutlet weak var topLineTopSpace: NSLayoutConstraint!
+    
     
     var circleCenter:CGPoint!
     var homeLocation:String?
@@ -39,6 +43,7 @@ class MainViewController: UIViewController {
     var lastTime:String?
     var leftTime:Date?
     
+    var radius:CGFloat!
     
     var dotShow:Bool = true
     
@@ -69,6 +74,7 @@ class MainViewController: UIViewController {
         timer.text = lastTimeString
         
         setConstraints()
+        setLableBorder()
         
         loadArrivalTimeLabel()
         countDownTimer()
@@ -160,8 +166,6 @@ class MainViewController: UIViewController {
     func setConstraints () {
         speechBubbleConstraint.constant = CGFloat(self.baseDotCircle.layer.frame.width/7)
         
-        
-        
         timer.adjustsFontSizeToFitWidth = true
         timer.minimumScaleFactor = 0.6
         timeLimitMessage.adjustsFontSizeToFitWidth = true
@@ -170,7 +174,28 @@ class MainViewController: UIViewController {
         twoPoint.adjustsFontSizeToFitWidth = true
         twoPoint.minimumScaleFactor = 0.6
         
+        missionName.adjustsFontSizeToFitWidth = true
+        missionName.minimumScaleFactor = 0.6
+        
+        timerCenterHeight.constant = (120 - self.view.frame.width)/2
         pathButtonWidth.constant = self.view.frame.width*3/7
+        missionNameWidth.constant = self.view.frame.width*2/7
+        
+        arrowWidth.constant = missionDetailView.layer.frame.width/13
+        
+        topButtonWidth.constant = missionDetailView.layer.frame.width/15
+        topLineTopSpace.constant = missionDetailView.layer.frame.height/40
+        missionNameTopSpace.constant = missionDetailView.layer.frame.height/15
+        
+    }
+    
+    func setLableBorder () {
+        
+        missionName.layer.borderColor = UIColor.black.cgColor
+        missionName.layer.borderWidth = 1
+        missionName.layer.cornerRadius = missionName.layer.frame.height/2-2
+        
+        missionDetailView.layer.cornerRadius = 10
         
     }
     
