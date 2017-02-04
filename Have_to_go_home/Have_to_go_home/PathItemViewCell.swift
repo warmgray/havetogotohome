@@ -26,4 +26,8 @@ class PathItemViewCell: UICollectionViewCell {
         walkTime.text! = "도보 거리 : "+item.walkTime
     }
     
+    private func setCellSize() {
+        
+    }
+    
 }

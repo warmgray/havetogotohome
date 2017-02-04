@@ -80,10 +80,9 @@ class MainViewController: UIViewController {
         countDownTimer()
         
     }
-
-    @IBAction func returnSetting(_ sender: Any) {
-        print("shit")
-        self.performSegue(withIdentifier: "reSettingSegue", sender: nil)
+    
+    @IBAction func backToMain (sender: UIStoryboardSegue) {
+        
     }
 
     override func viewDidAppear(_ animated: Bool) {
@@ -181,7 +180,7 @@ class MainViewController: UIViewController {
         pathButtonWidth.constant = self.view.frame.width*3/7
         missionNameWidth.constant = self.view.frame.width*2/7
         
-        arrowWidth.constant = missionDetailView.layer.frame.width/13
+        arrowWidth.constant = missionDetailView.layer.frame.width/14
         
         topButtonWidth.constant = missionDetailView.layer.frame.width/15
         topLineTopSpace.constant = missionDetailView.layer.frame.height/40
