@@ -23,7 +23,7 @@ class loadToHomeParser{
     //let parser = NSXMLParser(contentsOfURL: NSURL(string: baseURL)!)
     
     init(arr arrival_time :String, usr user_loc:String, home home_loc:String) {
-        baseURL = NSURL(string:"http://app.havetogohome.tk/?arrival_time=" + arrival_time + "&user_loc=" + user_loc + "&home_loc=" + home_loc)
+        baseURL = NSURL(string:"http://app.havetogohome.ga/?arrival_time=" + arrival_time + "&user_loc=" + user_loc + "&home_loc=" + home_loc)
         print(baseURL)
         getDataList()
         if noLoad == false {
